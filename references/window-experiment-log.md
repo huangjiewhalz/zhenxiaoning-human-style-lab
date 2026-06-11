@@ -35,6 +35,7 @@
 - 项目或产品事实，例如“镇小宁是我的 AI 领域试验田”。
 - 已授权奖项、链接、角色图、产品截图或作品样本。
 - 目标平台：论坛、公众号、小红书、X、PPT、Notion。
+- 目标尺寸或比例：用户指定 / 平台预设 / 待判断。
 - 目标张数：默认 4 张；内容很短用 3 张，过程复杂用 5 张。
 
 ## 执行流程
@@ -43,8 +44,8 @@
 2. **做隐私过滤**：列出不能进图的信息，必要时用“私密内容已省略”替代。
 3. **生成实验卡**：只写事实和用户已授权信息。
 4. **选择叙事结构**：按 3、4 或 5 张规划。
-5. **读取视觉规则**：需要角色时读取 `visual-ip-system.md`；需要手绘去 AI 味时读取 `handdrawn-style-seeds.md`；需要布局避重时读取 `layout-selection-engine.md` 和 `presentation-carriers.md`。
-6. **生成布局表**：每张图写清节点、密度、载体、布局、主体动作、允许中文短词。
+5. **读取视觉规则**：需要角色时读取 `visual-ip-system.md`；需要手绘去 AI 味时读取 `handdrawn-style-seeds.md`；需要布局避重时读取 `layout-selection-engine.md` 和 `presentation-carriers.md`；需要平台发布或尺寸适配时读取 `platform-image-sizes.md`。
+6. **生成平台尺寸计划和布局表**：每张图写清平台/位置、推荐尺寸、比例、安全区、节点、密度、载体、布局、主体动作、允许中文短词。
 7. **判断生图能力**：读取 `model-runtime-requirements.md`。有生图能力再生成图片；没有时先提示限制，再输出 prompt。
 8. **按 QA 复查**：读取 `qa-checklist.md`，检查隐私、事实、角色、密度、留白、布局避重和中文白名单。
 
@@ -58,6 +59,7 @@
 - 来源：当前窗口 / 粘贴对话 / 项目路径 / 用户摘要
 - 用途：公开发布 / 内部复盘 / 参赛展示 / 项目记录
 - 目标平台：
+- 目标尺寸：
 - 角色主体：
 
 ## 起因
@@ -114,7 +116,7 @@
 - 默认优先铅笔草图风；如果用户想更松弛，可以用蜡笔涂鸦风。
 - 用户上传角色或点名角色时，角色必须参与核心动作，不做角落装饰。
 - 每张图只讲一个节点，不把整个窗口全部塞进单图。
-- 默认 16:9；正文配图优先轻配图或中密度解释图；参赛展示、PPT 或“一张讲清楚”可以使用高密度工作台。
+- 默认按目标平台适配尺寸：论坛/PPT/正文展示可用 16:9，小红书优先 3:4 或 4:5，公众号头图使用 2.35:1 并保留中心安全区，竖屏短视频使用 9:16。没有平台时再用通用 16:9。
 - 每张图至少保留明显留白。低密度至少 55% 留白，中密度至少 35%，高密度至少 15%。
 - 中文只允许短词，必须列入 `Exact Chinese text allowed`。不要让模型自动生成标题、长句、段落或检查清单。
 
@@ -140,10 +142,15 @@
 
 ## 隐私过滤
 
+## 平台尺寸计划
+
+| 序号 | 平台/位置 | 推荐尺寸 | 比例 | 安全区 | 是否需要重排 |
+| --- | --- | --- | --- | --- | --- |
+
 ## 系列规划
 
-| 序号 | 节点 | 密度 | 载体 | 布局 | 主体动作 | 允许中文短词 | 避重理由 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
+| 序号 | 节点 | 密度 | 尺寸/比例 | 载体 | 布局 | 主体动作 | 允许中文短词 | 避重理由 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## 生图能力判断
 
@@ -165,9 +172,13 @@
 ## Prompt 模板
 
 ```text
-Create a 16:9 white-background hand-drawn explanatory illustration for a personal AI experiment log.
+Create a white-background hand-drawn explanatory illustration for a personal AI experiment log.
 Use the user's original IP subject as the active character. The subject must perform the core action, not stand as decoration.
 
+Output size / aspect ratio: {平台尺寸，例如 1080x1440, 3:4 / 1280x720, 16:9 / 900x383, 2.35:1}
+Platform placement: {小红书轮播 / 微信公众号头图 / X 信息流 / 论坛展示 / 通用}
+Safe area: {关键文字、角色脸和核心道具必须放在安全区；哪些边缘不能放重要内容}
+Recomposition rule: Compose natively for this platform size; do not crop a 16:9 layout into this ratio.
 Scene node: {起因/卡点/打磨/结果/下一步}
 Density: {轻配图/中密度解释图/高密度工作台}
 Carrier: {chosen carrier}

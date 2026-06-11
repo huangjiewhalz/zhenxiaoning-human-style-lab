@@ -14,6 +14,7 @@
 │   ├── visual-style-seed.md
 │   ├── ip-subject.md
 │   ├── presentation-carriers.md
+│   ├── platform-image-sizes.md
 │   ├── composition-patterns.md
 │   ├── model-runtime-requirements.md
 │   ├── window-experiment-log.md
@@ -27,7 +28,7 @@
     └── off-brand.md
 ```
 
-如果用户不需要视觉风格，可以省略 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md` 和 `composition-patterns.md`。如果用户明确需要视觉主体或连续配图，必须包含这些文件。
+如果用户不需要视觉风格，可以省略 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`platform-image-sizes.md` 和 `composition-patterns.md`。如果用户明确需要视觉主体、连续配图或自媒体平台尺寸适配，必须包含这些文件。
 如果用户强调去 AI 味、风格回归或长期校准，包含 `ai-flavor-diagnostics.md`、`knowledge-cards.md` 和 `style-evolution-log.md`；否则可以省略。
 如果用户希望把对话、项目过程或 AI 实验过程沉淀成图文复盘，包含 `window-experiment-log.md`。
 
@@ -53,6 +54,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 - `references/visual-style-seed.md`：视觉风格，只有需要配图时读取。
 - `references/ip-subject.md`：原创固定主体，只有需要视觉主体时读取。
 - `references/presentation-carriers.md`：信息呈现载体，只有需要配图、系列避重或用户反馈“不够新颖”时读取。
+- `references/platform-image-sizes.md`：小红书、微信公众号、X、Instagram、竖屏短视频等平台的尺寸、比例、安全区和重排规则，只有需要平台发布、封面、轮播、长图或指定尺寸时读取。
 - `references/composition-patterns.md`：画面组织和避重规则，只有需要配图时读取。
 - `references/model-runtime-requirements.md`：模型能力、降级模式和生图链路，只有需要跨环境执行或配图时读取。
 - `references/window-experiment-log.md`：一窗实验日志，把当前对话或项目过程整理成 3-5 张手绘复盘图，只有用户要求窗口复盘、实验日志或过程可视化时读取。
@@ -68,9 +70,9 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 1. 先识别任务类型：写作、改写、标题、脚本、配图、UI 文案或风格校准。
 2. 读取 `style-dna.md` 和 `anti-style.md`。
 3. 需要结构时读取 `content-patterns.md`。
-4. 需要视觉输出时读取 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`composition-patterns.md` 和 `model-runtime-requirements.md`，先判断当前环境是否能看图、生成图或只能输出 prompt。若不能直接生成图片，先提示用户当前模型/环境不能生图，再输出布局计划和可复制 prompt。
+4. 需要视觉输出时读取 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`composition-patterns.md` 和 `model-runtime-requirements.md`；如果用户指定平台、封面、轮播、长图、视频封面、分享卡片或具体尺寸，再读取 `platform-image-sizes.md`，先判断当前环境是否能看图、生成图或只能输出 prompt。若不能直接生成图片，先提示用户当前模型/环境不能生图，再输出平台尺寸计划、布局计划和可复制 prompt。
 5. 用户反馈“不像我”“AI 味重”“太模板”“太光滑”时，读取 `ai-flavor-diagnostics.md`，先诊断再修复。
-6. 用户要求把当前窗口、长对话、项目过程或 AI 实验过程做成图时，读取 `window-experiment-log.md`，先生成实验卡、布局规划和中文短词白名单；有生图能力再出图，没有则输出 prompt。
+6. 用户要求把当前窗口、长对话、项目过程或 AI 实验过程做成图时，读取 `window-experiment-log.md`；如果要发布到平台或用户指定尺寸，再读取 `platform-image-sizes.md`，先生成实验卡、平台尺寸计划、布局规划和中文短词白名单；有生图能力再出图，没有则输出 prompt。
 7. 草稿缺少长期上下文时读取 `knowledge-cards.md`，只使用用户授权事实，不编造。
 8. 用户多次修改或明确偏好时，更新 `style-evolution-log.md`，再判断是否需要同步 `style-dna.md` 或 `anti-style.md`。
 9. 输出前按 `qa-checklist.md` 检查。
@@ -135,6 +137,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 ## 适用场景
 
 - 正文配图：
+- 平台尺寸：
 - 产品解释：
 - 脚本分镜：
 - UI 空状态：
@@ -171,7 +174,9 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 
 - 默认档位：轻配图。
 - 可选档位：轻配图 / 中密度解释图 / 高密度工作台。
-- 自动选择依据：平台、材料复杂度、是否教程/复盘/画布、用户是否要求“一张图讲清楚”。
+- 自动选择依据：平台、发布位置、目标尺寸、材料复杂度、是否教程/复盘/画布、用户是否要求“一张图讲清楚”。
+- 平台尺寸：读取 `platform-image-sizes.md` 后填写推荐尺寸、比例和安全区；没有平台时默认 16:9 通用正文配图。
+- 多平台策略：优先横版、竖版、方版同源多版，不把一张图裁切到所有平台。
 - 留白偏好：自动 / 留白多 / 平衡 / 内容更丰富。用户没说时自动判断；用户明确表达留白或信息量偏好时优先执行。
 - 轻配图预算：1 个核心动作，2-4 个短标注，1-3 个信息承载物，0-1 条箭头，至少 55% 留白；像正文旁边的一张呼吸图。主体群占画布宽度 30%-45%、高度 25%-40%，四周至少 25% 空白安全边。
 - 留白多预算：主体群占画布宽度 25%-38%、高度 20%-32%，四周至少 35% 空白安全边，中文批注 1-3 个。
@@ -223,6 +228,44 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 - 如果新颖载体让核心动作变模糊，退回基础载体并说明原因。
 ```
 
+## platform-image-sizes.md 模板
+
+```markdown
+# Platform Image Sizes
+
+## 使用原则
+
+- 平台尺寸是构图输入，不是最后裁切步骤。
+- 用户指定平台、封面、轮播、长图、视频封面、分享卡片或具体尺寸时读取本文件。
+- 同一内容多平台发布时，优先生成横版、竖版、方版同源多版，不把一张图裁切到所有平台。
+
+## 常用预设
+
+| 平台/位置 | 推荐尺寸 | 比例 | 构图提醒 |
+| --- | --- | --- | --- |
+| 小红书图文封面/轮播 | 1080 x 1440 | 3:4 | 上中下结构，适合竖向阅读 |
+| 微信公众号头图 | 900 x 383 | 2.35:1 | 关键内容放中心方形安全区 |
+| 微信公众号正文配图 | 900 x 500 / 1080 x 608 | 约 16:9 | 适合轻配图或中密度解释图 |
+| X 信息流横图 | 1200 x 675 / 1280 x 720 | 16:9 | 关键内容居中，避免边缘裁切 |
+| X 链接卡片 | 1200 x 628 | 1.91:1 | 超宽，只放一个核心动作 |
+| Instagram / Facebook Feed | 1080 x 1350 | 4:5 | 移动端占屏大，适合竖向重排 |
+| Stories / Reels / 抖音 / TikTok / 视频号 | 1080 x 1920 | 9:16 | 顶部和底部留 UI 安全区 |
+| 通用方图 | 1080 x 1080 | 1:1 | 一个动作 + 一个结论 |
+| 通用横图 / PPT / 视频封面 | 1920 x 1080 / 1280 x 720 | 16:9 | 适合横向阅读路径 |
+
+## 输出格式
+
+| 序号 | 平台/位置 | 推荐尺寸 | 比例 | 密度 | 安全区 | 是否可由母版裁切 |
+| --- | --- | --- | --- | --- | --- | --- |
+
+## Prompt 字段
+
+- Output size / aspect ratio:
+- Platform placement:
+- Safe area:
+- Recomposition rule: Compose natively for this platform size. Do not simply crop a 16:9 layout into this ratio.
+```
+
 ## composition-patterns.md 模板
 
 ```markdown
@@ -234,8 +277,8 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 
 生成连续配图时，先输出布局表，再写单张 prompt：
 
-| 序号 | 主题 | 内容信号 | 呈现载体 | 选择布局 | 避重理由 | 主体动作 |
-| --- | --- | --- | --- | --- | --- | --- |
+| 序号 | 主题 | 平台/位置 | 尺寸/比例 | 内容信号 | 呈现载体 | 选择布局 | 避重理由 | 主体动作 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
 
 ## 可用结构
 
@@ -287,11 +330,13 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 4. 先选择密度档位：轻配图、中密度解释图或高密度工作台。
 5. 判断留白偏好：自动 / 留白多 / 平衡 / 内容更丰富。留白多时优先局部轻描；内容更丰富时才升密度。
 6. 再选择呈现载体。需要稳妥时选基础载体；需要新鲜感时选新颖载体。新颖载体包括微型街区、地铁换乘、暗房显影、收音调频、邮局分拣、裁缝试衣、厨房备料、博物馆展柜、舞台后台、天气观测、沙盘推演、小店货架、维修工位和观测星图。
-7. 正文配图、小红书、产品介绍默认轻配图；教程/功能说明默认中密度解释图；复盘、方法论、PPT、无限画布或“一张图讲清楚”默认高密度工作台。
-8. 内容信号过多时，拆成系列图或提高密度档位，但高密度也必须有清晰分区和主阅读路径。
-9. 遇到流程卡点、素材复用、信息筛选、想法成型、经验沉淀、信任建立等常见抽象主题时，先避开公开案例式物件组合和画面骨架，再从用户材料里选择新的空间关系。
-10. 如果是系列图，相邻两张不能使用同一布局，也不能连续使用同一呈现载体；10 张以内至少使用 6 种布局和 6 类载体。
-11. 如果缩略图看起来只是换了文字的同一张图，重写布局。
+7. 如果用户指定平台、封面、轮播、长图、视频封面、分享卡片或具体尺寸，读取 `platform-image-sizes.md`，先确定尺寸、比例和安全区。
+8. 正文配图、小红书、产品介绍默认轻配图；教程/功能说明默认中密度解释图；复盘、方法论、PPT、无限画布或“一张图讲清楚”默认高密度工作台。
+9. 内容信号过多时，拆成系列图或提高密度档位，但高密度也必须有清晰分区和主阅读路径。
+10. 遇到流程卡点、素材复用、信息筛选、想法成型、经验沉淀、信任建立等常见抽象主题时，先避开公开案例式物件组合和画面骨架，再从用户材料里选择新的空间关系。
+11. 如果是系列图，相邻两张不能使用同一布局，也不能连续使用同一呈现载体；10 张以内至少使用 6 种布局和 6 类载体。
+12. 如果缩略图看起来只是换了文字的同一张图，重写布局。
+13. 不把 16:9 图直接裁成小红书、公众号头图或 9:16 竖图；涉及文字、角色脸和核心道具时必须重排构图。
 
 ## 原创隐喻方法
 
@@ -354,6 +399,9 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 
 输出时先写：
 
+- 平台/位置：小红书图文封面 / 微信公众号头图 / X 信息流 / 公众号正文配图 / 通用等
+- 推荐尺寸与比例：例如 1080x1440, 3:4；900x383, 2.35:1；1280x720, 16:9
+- 安全区：关键文字、角色脸和核心道具必须放在哪个区域
 - 密度档位：轻配图 / 中密度解释图 / 高密度工作台
 - 留白偏好：自动 / 留白多 / 平衡 / 内容更丰富
 - 呈现载体：从 `presentation-carriers.md` 选择 1 个基础或新颖载体
@@ -362,6 +410,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 - 布局：
 - 主体动作：
 - 允许中文短词：列出所有允许出现在图里的中文，生图 prompt 必须写 `Exact Chinese text allowed`
+- 是否需要重排构图：是 / 否；不要只裁切
 - 生图 prompt：
 
 ## 一窗实验日志
@@ -370,9 +419,10 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 
 1. 实验卡：起因、目标、卡点、关键选择、当前结果、下一步。
 2. 隐私过滤：哪些内容不能进图。
-3. 布局规划表：每张图的节点、密度、载体、布局和主体动作。
-4. 每张图的 `Exact Chinese text allowed`。
-5. 每张图的生图 prompt。当前环境不能直接生图时，先明确提示限制，不要声称已生成图片。
+3. 平台尺寸计划：每张图的目标平台、尺寸、比例和安全区。
+4. 布局规划表：每张图的节点、密度、载体、布局和主体动作。
+5. 每张图的 `Exact Chinese text allowed`。
+6. 每张图的生图 prompt。当前环境不能直接生图时，先明确提示限制，不要声称已生成图片。
 
 ## AI 味修复
 
@@ -404,7 +454,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 
 ## 生图模型
 
-用于把配图 prompt 生成真实图片。最好支持参考图输入、16:9 输出、手绘风格约束和少量短中文批注。
+用于把配图 prompt 生成真实图片。最好支持参考图输入、16:9、3:4、4:5、1:1、9:16、2.35:1 等常见自媒体比例，支持手绘风格约束和少量短中文批注。
 
 ## 图像编辑模型
 

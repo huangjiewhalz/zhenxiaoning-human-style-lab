@@ -4,6 +4,8 @@
 
 需要根据用户上传内容自动选择布局、规划连续配图或避免构图重复时，先读取 `layout-selection-engine.md`，再回到本文件套用主体和 prompt 模板。
 
+需要适配小红书、微信公众号、X、Instagram、竖屏短视频、PPT、论坛或用户指定尺寸时，先读取 `platform-image-sizes.md`，把尺寸、比例、安全区和重排规则写进视觉 prompt。不要把默认 16:9 构图直接裁成其他比例。
+
 如果用户想要更强的反 AI 味，先读取 `handdrawn-style-seeds.md` 选择具体手绘工具风格。默认用铅笔草图风；需要更温暖、更个人 IP 时用蜡笔涂鸦风；需要诊断、批改或反风格清单时用红笔批改风。再套用本文件的主体和构图规则。
 
 ## 核心边界
@@ -71,6 +73,7 @@
 ## 适用场景
 
 - 正文配图：
+- 平台尺寸：
 - 产品解释：
 - 脚本分镜：
 - UI 空状态：
@@ -97,6 +100,7 @@
 - 正文配图和轻配图优先局部轻描：主体群缩小，外圈白边清楚，不画完整场景。
 - 中文标注短而少，优先像手写批注，不像标题排版。
 - 低科技、物理化、现场化表达抽象概念。
+- 平台尺寸是构图输入，不是最后裁切：小红书竖图用上中下结构，公众号头图守住中心方形安全区，X/正文横图用横向阅读路径，9:16 竖屏避开顶部和底部 UI 遮挡。
 
 ## 色彩范围
 
@@ -109,7 +113,9 @@
 
 - 默认档位：轻配图。
 - 可选档位：轻配图 / 中密度解释图 / 高密度工作台。
-- 自动选择依据：平台、材料复杂度、是否教程/复盘/画布、用户是否要求“一张图讲清楚”。
+- 自动选择依据：平台、发布位置、目标尺寸、材料复杂度、是否教程/复盘/画布、用户是否要求“一张图讲清楚”。
+- 平台尺寸：读取 `platform-image-sizes.md` 后填写推荐尺寸、比例和安全区；没有平台时默认 16:9 通用正文配图。
+- 多平台策略：优先横版、竖版、方版同源多版，不把一张图裁切到所有平台。
 - 留白偏好：自动 / 留白多 / 平衡 / 内容更丰富。用户没说时自动判断；用户明确表达留白或信息量偏好时优先执行。
 - 轻配图尺度：主体群占画布宽度 30%-45%、高度 25%-40%，四周至少 25% 空白安全边；用户反馈太满时进一步缩小到宽度 30%-40%、高度 25%-35%。
 - 禁止出现：未说明密度档位就堆满信息；把所有诊断点同时上画面；高密度却没有清晰分区；低密度和高密度缩略图看起来只是文字多少不同。
@@ -285,7 +291,7 @@
 ## Prompt 模板
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 
 Art direction:
 Use a clean white canvas, loose black sketch lines, quiet spacing, and a few short handwritten Chinese notes in red, orange, or blue. The image should feel like a rough thinking sketch for a product/content idea, not a slide, poster, polished vector graphic, UI screen, or children's cartoon.

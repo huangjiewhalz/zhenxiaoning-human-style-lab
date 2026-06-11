@@ -61,7 +61,7 @@
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use a clean white canvas, loose black pencil-like lines, and a few short handwritten Chinese notes in red, orange, or blue.
 Original subject: 墨点操作员, an irregular ink-drop operator with one small cutout eye and tiny clamp-like supports, serious and not cute.
 Topic: 把默认 AI 味拦在风格资产外面。
@@ -100,7 +100,7 @@ Avoid third-party IP, polished vector art, slide diagrams, dense arrows, and cor
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use white canvas, black hand-drawn pencil outlines, spacious layout, and a few handwritten Chinese notes.
 Original subject: 纸片工人, a folded paper worker with simple line limbs and a calm expression.
 Topic: 把 5 篇旧作品整理成风格档案。
@@ -139,7 +139,7 @@ Avoid third-party characters, copied compositions, PPT diagrams, and big titles.
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 White canvas, loose black sketch lines, restrained red/orange/blue handwritten notes.
 Original subject: 红章操作员, a small red stamp operator with tiny feet and a strict calm face.
 Topic: 生成前先过反风格检查。
@@ -179,7 +179,7 @@ No third-party IP, no official seal imitation, no poster style, no dense explain
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use a clean white page, loose black line drawing, sparse handwritten Chinese notes, and clear empty space.
 Original subject: 线团人, a small figure made of loose black threads with a tiny clip body, serious and not cute.
 Topic: 从混乱作品里拉出个人风格线索。
@@ -219,7 +219,7 @@ Avoid copied examples, third-party IP, slide layout, and overly dense connection
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 illustration for a Chinese article.
+Create a single illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use white background, black hand-drawn lines, spacious composition, and a few short Chinese handwritten notes.
 Original subject: 空心方盒, a hand-drawn hollow box character with small line limbs, calm and system-like.
 Topic: 个人风格资产包不是一个 prompt，而是一组可复用模块。

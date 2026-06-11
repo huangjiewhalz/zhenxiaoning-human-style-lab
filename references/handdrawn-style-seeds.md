@@ -84,7 +84,7 @@
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 pencil sketch style illustration for a Chinese article.
+Create a single pencil sketch style illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use a clean white paper background, loose gray-black pencil lines, light sketch shadows, slight repeated strokes, and a few small handwritten Chinese notes in red or blue. The image should feel like a real thinking sketch on paper, not a polished vector infographic, UI screen, poster, or children's drawing.
 
 Original subject:
@@ -183,7 +183,7 @@ polished vector art, 3D rendering, glossy gradients, dense arrows, full scene, s
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 crayon-style illustration for a Chinese article.
+Create a single crayon-style illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use a clean white paper background. Draw with uneven wax-crayon strokes, slightly broken edges, visible hand pressure, and imperfect hand-drawn shapes. Keep the layout sparse and readable.
 
 Original subject:
@@ -285,7 +285,7 @@ polished vector art, 3D rendering, glossy gradients, dense arrows, slide layout,
 ### 示例 prompt
 
 ```text
-Create a single horizontal 16:9 red-pen editing style illustration for a Chinese article.
+Create a single red-pen editing style illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
 Use a clean white manuscript page with blue-black draft text lines, hand-drawn red pen marks, circles, strike-throughs, arrows, and short margin notes. The image should look like a real human editing pass, not a polished infographic.
 
 Original subject:
