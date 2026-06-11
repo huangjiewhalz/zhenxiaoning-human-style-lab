@@ -46,11 +46,11 @@
 
 如果内容超出当前档位预算，优先拆成系列图，不要硬塞进单张图。
 
-密度差异要能从缩略图看出来：轻配图是一个动作，高密度是一个系统，中密度是一个机制。不要只靠增加纸片、卡片或文字数量来假装升密度。
+密度差异要能从缩略图看出来：轻配图是一个小局部里的生活动作，高密度是一个系统，中密度是一个机制。不要只靠增加纸片、卡片或文字数量来假装升密度。
 
 ## 构图尺度和留白
 
-轻配图默认使用“局部轻描”，不是完整场景。画面只保留一个核心道具局部、一个主体动作和一个结果，像文章旁边的小呼吸图。
+轻配图默认使用“局部轻描”，不是完整场景。画面保留一个小局部、一个主体动作、2-4 个参与动作的物件和一个露出的结果，像文章旁边的小呼吸图。
 
 - 轻配图主体群建议占画布宽度 30%-45%、高度 25%-40%，四周保留至少 25% 空白安全边。
 - 如果用户反馈“太满”“留白太少”“不精致”，主体群缩到画布宽度 30%-40%、高度 25%-35%，四周安全边至少 30%。
@@ -58,8 +58,10 @@
 - 如果用户明确要“内容更丰富”，可以升到中密度或高密度，但必须先安排分区和阅读路径，不能只是放大主体、增加纸片或堆更多批注。
 - 批注是小手写注，不是标题。不要让红字、箭头或标签成为画面里最大的视觉元素。
 - 图片中文字必须来自 prompt 里的短词白名单，不自动新增解释句、标题或检查清单。
-- 新颖载体也要能局部化：收音调频可以只画一个旋钮和波形，裁缝试衣可以只画一块布样和针线，暗房显影可以只画一个托盘和一张照片，小店货架可以只画一个小格口。
+- 新颖载体也要能动作化：收音调频可以画手指把噪声旋钮拧到清晰刻度，裁缝试衣可以画一块布样被粗线缝回边角，暗房显影可以画照片从水里露出一点轮廓，小店货架可以画价签被掀开露出真实卖点。
 - 只有用户明确要“完整场景”“一张图讲清楚”“无限画布”“PPT 工作台”时，才扩展成完整空间或多区块工作台。
+- 低密度必须先选日常动作隐喻，例如掀开、摸索、拖出来、按住、贴胶带、晾干、揉纸、夹住、蹲下找、抖落、捞出、撕开、拼回去。
+- 如果使用场景，场景要粗糙、手作、不精致：允许歪线、轻微透视错误、粗糙边缘和草稿阴影；禁止精致房间、精致餐厅、精致 UI、商业海报、潮流大片和 3D 渲染。
 
 ## visual-style-seed.md 生成模板
 
@@ -100,6 +102,8 @@
 - 正文配图和轻配图优先局部轻描：主体群缩小，外圈白边清楚，不画完整场景。
 - 中文标注短而少，优先像手写批注，不像标题排版。
 - 低科技、物理化、现场化表达抽象概念。
+- 根据用途选择隐喻方式：正文配图优先延迟型，教程/功能说明优先秒懂型，方法论/复盘优先系统型。
+- 低密度优先用一个小局部里的动作关系代替完整场景；中密度才允许粗糙小场景；高密度才允许工作台或完整系统。
 - 平台尺寸是构图输入，不是最后裁切：小红书竖图用上中下结构，公众号头图守住中心方形安全区，X/正文横图用横向阅读路径，9:16 竖屏避开顶部和底部 UI 遮挡。
 
 ## 色彩范围
@@ -286,7 +290,7 @@
 - 纸片、卡片、便签、文件夹属于同一承载物家族。连续两张不能都主要靠这类物件承载信息；下一张要换成日历、地图、控制台、对话、空间剖面、真实道具或局部特写。
 - 主体位置要轮换：居中、侧边、俯视只露手、局部特写、走在路线中、站在盒子内部。
 - 同一表达任务不要沿用公开案例的物件组合或画面骨架；先换成来自用户材料的新空间关系和动作，再写 scene plan。
-- 如果缩略图一眼看起来只是“换了文字的同一张图”，判定为失败，重写 scene plan。
+- 如果缩略图缩略图看起来只是“换了文字的同一张图”，判定为失败，重写 scene plan。
 
 ## Prompt 模板
 
@@ -315,10 +319,25 @@ Whitespace preference:
 {自动 / 留白多 / 平衡 / 内容更丰富}. If the user does not specify, choose automatically from the content. If 留白多, shrink the main cluster to 25%-38% of canvas width and 20%-32% of canvas height, keep at least 35% blank margin on all sides, and use only 1-3 short handwritten notes. If 内容更丰富, use medium or high density only when the content requires it, with clear sections and a reading path.
 
 Presentation carrier:
-{基础或新颖载体，见 presentation-carriers.md。例如：纸面文具 / 时间记录 / 操作面板 / 路线地图 / 空间剖面 / 对话现场 / 样本图鉴 / 实验检测 / 票据档案 / 舞台展示 / 工具修理 / 生活实物 / 微型街区 / 地铁换乘 / 暗房显影 / 收音调频 / 邮局分拣 / 裁缝试衣 / 厨房备料 / 博物馆展柜 / 舞台后台 / 天气观测 / 沙盘推演 / 小店货架 / 维修工位 / 观测星图}. Use this carrier as the main place where information lives. Do not default to paper cards, sticky notes, folders, or pencils unless the selected carrier is 纸面文具.
+{基础或新颖载体，见 presentation-carriers.md。例如：纸面文具 / 时间记录 / 操作面板 / 路线地图 / 空间剖面 / 对话现场 / 样本图鉴 / 实验检测 / 票据档案 / 舞台展示 / 工具修理 / 生活实物 / 微型街区 / 地铁换乘 / 暗房显影 / 收音调频 / 邮局分拣 / 裁缝试衣 / 厨房备料 / 博物馆展柜 / 舞台后台 / 天气观测 / 沙盘推演 / 小店货架 / 维修工位 / 观测星图}. Use this carrier as the place where the everyday action happens. Do not default to paper cards, sticky notes, folders, timelines, UI panels, or pencils unless the action needs them.
+
+Metaphor mode:
+{秒懂型 / 延迟型 / 系统型}. Use 延迟型 for normal article illustrations, 秒懂型 for tutorials/product explanations/platform sizing, and 系统型 for methodology/review/canvas images.
+
+Everyday action metaphor:
+{低密度必须填写一个生活动作，例如从被子下面摸出纸条 / 掀开卡纸露出线索 / 抖旧桌布留下有用颗粒 / 揉皱太光滑的稿纸再贴补丁 / 把图塞进不同旧相框 / 胶带贴住吵闹红点。}
+
+Occlusion relationship:
+{谁盖住、压住、夹住、藏住或挡住了什么。没有遮挡时写清处理关系。}
+
+Revealed clue:
+{少量露出的线索，例如皱纸条一角、杯底字迹、旧日期标签、被贴住红点旁边的小纸条。}
+
+Roughness rule:
+Use rough hand-drawn staging: imperfect lines, uneven perspective, slightly crooked objects, visible sketch marks, and unpolished edges. Avoid polished rooms, polished restaurants, clean UI mockups, commercial posters, glossy 3D rendering, and highly finished illustration.
 
 Framing scale:
-{局部轻描 / 小场景 / 完整场景 / 工作台}. For 轻配图, default to 局部轻描: one small central object cluster, not a complete room, street, shop, dashboard, or workbench. Keep the cluster at 30%-45% of canvas width and 25%-40% of canvas height, with at least 25% blank margin on all sides. If the user complained about crowded edges, shrink the cluster to 30%-40% width and 25%-35% height, with at least 30% blank margin.
+{局部轻描 / 小场景 / 完整场景 / 工作台}. For 轻配图, default to 局部轻描: one small action cluster with 2-4 objects and one occlusion/reveal/process relationship, not a complete room, street, shop, dashboard, or workbench. Keep the cluster at 30%-45% of canvas width and 25%-40% of canvas height, with at least 25% blank margin on all sides. If the user complained about crowded edges, shrink the cluster to 30%-40% width and 25%-35% height, with at least 30% blank margin.
 
 Series variety:
 If this is part of a series, state which composition mode is used and how it differs from the previous images. Avoid repeating left-input / center-character / right-output cards unless this is the first image or there is a strong reason.
@@ -330,7 +349,7 @@ Exact Chinese text allowed:
 {列出允许出现在图里的所有中文短词。生成图不得新增解释句、标题、段落、检查清单或未列出的中文。}
 
 Hard limits:
-Follow the selected density tier. 轻配图 must stay sparse and leave at least 55% white space; show one main action, not an overview. For 轻配图, keep the subject/object cluster visibly smaller than the canvas, avoid edge-to-edge composition, and make handwritten notes small annotations rather than titles. All visible Chinese text must be short and must come only from the exact allowed text list; do not invent headlines, explanatory sentences, paragraph text, checklist items, or extra labels. 中密度解释图 must have two clear information zones at most and leave at least 35% white space; avoid three-folder or many-card layouts unless the content specifically requires classification. 高密度工作台 may contain more material, but must have three clear sections, a main reading path, and at least 15% white space. Do not draw every diagnostic point unless the selected tier is 高密度工作台 and the user asked for a workbench, canvas, review, lesson, PPT, or one-image overview. Do not make density differ only by adding paper cards or handwritten labels. The presentation carrier must be visible: if the carrier is 操作面板, draw switches/sliders/buttons; if 路线地图 or 地铁换乘, draw paths/stations; if 对话现场, draw a real exchange scene; if 时间记录, draw calendar/timeline; if 空间剖面 or 微型街区, draw rooms/streets/layers only when the framing scale is 完整场景 or 工作台; if the framing scale is 局部轻描, use one local doorway/window/shelf/room fragment instead. If 样本图鉴 or 博物馆展柜, draw catalog/exhibit specimens; if 暗房显影, draw photos/developing trays; if 收音调频, draw dials/waveforms; if 裁缝试衣, draw measuring tape/fabric samples. Avoid top-left category titles, structure labels, chaotic dense arrows, repeated left-to-right pipeline layouts, repeated paper/card/folder carrier families across adjacent series images, copied examples, public-case metaphor templates, third-party IP, recognizable living-artist styles, and any mascot-like copy of another character.
+Follow the selected density tier. 轻配图 must stay sparse and leave at least 45%-55% white space; show one everyday action relationship with 2-4 objects, not an overview and not a static prop arrangement. For 轻配图, keep the subject/object cluster visibly smaller than the canvas, avoid edge-to-edge composition, and make handwritten notes small annotations rather than titles. All visible Chinese text must be short and must come only from the exact allowed text list; do not invent headlines, explanatory sentences, paragraph text, checklist items, or extra labels. 中密度解释图 must have two clear information zones at most and leave at least 35% white space; it may use a rough small scene, but the scene must be driven by the action, not by card stacking, and must not be a polished full room, full shop, full station, full restaurant, or full workbench. 高密度工作台 may contain more material, but must have three clear sections, a main reading path, and at least 15% white space; keep the scene rough and hand-drawn, not commercial or glossy. Do not draw every diagnostic point unless the selected tier is 高密度工作台 and the user asked for a workbench, canvas, review, lesson, PPT, or one-image overview. Do not make density differ only by adding paper cards or handwritten labels. The presentation carrier must be visible through props, action, occlusion, revealed clues, and spacing, not through explanatory text. If the framing scale is 局部轻描, use a daily action such as lifting a blanket corner, pulling a note from under cardboard, taping down a noisy red dot, shaking an old tablecloth, wrinkling a too-smooth draft, fitting a picture into mismatched frames, or fishing a clue from a cup bottom. Avoid polished interiors, polished restaurants, clean UI mockups, commercial posters, glossy 3D rendering, top-left category titles, structure labels, chaotic dense arrows, repeated left-to-right pipeline layouts, repeated paper/card/folder/timeline carrier families across adjacent series images, copied examples, public-case metaphor templates, third-party IP, recognizable living-artist styles, and any mascot-like copy of another character.
 ```
 
 ## QA 判断
