@@ -25,12 +25,18 @@
 │   ├── ai-flavor-diagnostics.md
 │   ├── knowledge-cards.md
 │   └── style-evolution-log.md
+├── assets/
+│   └── references/
+│       └── characters/
+│           ├── README.md
+│           └── <subject-slug>-reference.png
 └── examples/
     ├── on-brand.md
     └── off-brand.md
 ```
 
 如果用户不需要视觉风格，可以省略 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`platform-image-sizes.md` 和 `composition-patterns.md`。如果用户明确需要视觉主体、连续配图或自媒体平台尺寸适配，必须包含这些文件。
+如果用户需要固定 IP 主体，建议包含 `assets/references/characters/`：短期任务可以只用对话上传图，长期复用才把授权角色图放进该目录。
 如果用户强调去 AI 味、风格回归或长期校准，包含 `ai-flavor-diagnostics.md`、`knowledge-cards.md` 和 `style-evolution-log.md`；否则可以省略。
 如果用户希望把对话、项目过程或 AI 实验过程沉淀成图文复盘，包含 `window-experiment-log.md`。
 
@@ -65,6 +71,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 - `references/ai-flavor-diagnostics.md`：AI 味风险诊断，只有用户反馈“不像我”“AI 味重”“太模板”时读取。
 - `references/knowledge-cards.md`：用户授权的长期事实、产品信息、常用表达和禁说信息。
 - `references/style-evolution-log.md`：用户后续修改和稳定偏好的学习记录，只有校准时读取。
+- `assets/references/characters/`：固定 IP 主体参考图，只有需要长期复用视觉主体时读取。
 - `examples/`：正反例校准。
 
 ## 工作流
@@ -72,7 +79,7 @@ description: Use this personal style asset Skill to write, rewrite, title, scrip
 1. 先识别任务类型：写作、改写、标题、脚本、配图、UI 文案或风格校准。
 2. 读取 `style-dna.md` 和 `anti-style.md`。
 3. 需要结构时读取 `content-patterns.md`。
-4. 需要视觉输出时读取 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`composition-patterns.md` 和 `model-runtime-requirements.md`；如果用户指定平台、封面、轮播、长图、视频封面、分享卡片或具体尺寸，再读取 `platform-image-sizes.md`，先判断当前环境是否能看图、生成图或只能输出 prompt。若不能直接生成图片，先提示用户当前模型/环境不能生图，再输出平台尺寸计划、布局计划和可复制 prompt。
+4. 需要视觉输出时读取 `visual-style-seed.md`、`ip-subject.md`、`presentation-carriers.md`、`composition-patterns.md` 和 `model-runtime-requirements.md`；如果 `ip-subject.md` 写有固定参考图路径，优先读取 `assets/references/characters/` 里的对应图片；如果用户指定平台、封面、轮播、长图、视频封面、分享卡片或具体尺寸，再读取 `platform-image-sizes.md`，先判断当前环境是否能看图、生成图或只能输出 prompt。若不能直接生成图片，先提示用户当前模型/环境不能生图，再输出平台尺寸计划、布局计划和可复制 prompt。
 5. 用户反馈“不像我”“AI 味重”“太模板”“太光滑”时，读取 `ai-flavor-diagnostics.md`，先诊断再修复。
 6. 用户要求把当前窗口、长对话、项目过程或 AI 实验过程做成图时，读取 `window-experiment-log.md`；如果要发布到平台或用户指定尺寸，再读取 `platform-image-sizes.md`，先生成实验卡、平台尺寸计划、布局规划和中文短词白名单；有生图能力再出图，没有则输出 prompt。
 7. 草稿缺少长期上下文时读取 `knowledge-cards.md`，只使用用户授权事实，不编造。
@@ -169,7 +176,9 @@ policy:
 
 - 每张图只讲一个核心意思。
 - 用户上传或点名角色时，必须锁定该角色的识别点并作为主视觉主体；默认主体只在用户没有角色时使用。
+- 用户点名“镇小宁 / zhenxiaoning”时，即使没有上传角色图，也默认锁定镇小宁蓝色角色：蓝色圆润身体、黄色触角、红鼻子、大白眼、白肚皮、短手短脚。
 - 已有用户角色时，不得只把默认主体换色，也不得回退到原创主体种子。
+- 连续配图必须使用同一个主体，只变化动作、角度、道具和构图，不得每张图从默认主体种子里换一个。
 - 主体必须参与核心动作，不做角落装饰。
 - 保留明显留白，不画满。
 - 正文配图和轻配图优先局部轻描，主体群缩小，外圈白边清楚，不画完整场景。
@@ -582,10 +591,13 @@ policy:
 ## 常用角色/主体
 
 - 来源：用户上传角色 / 用户文字设定 / 原创主体种子
+- 参考图路径：短期上传图 / `assets/references/characters/<subject-slug>-reference.png`
 - 识别点：颜色、体型、五官、标志部件、比例、表情气质
 - 禁改点：
 - 默认动作库：
-- 只有用户没有角色图和角色设定时，才从原创主体种子起步。
+- 如果用户点名“镇小宁 / zhenxiaoning”，默认主体为蓝色圆润身体、黄色触角、红鼻子、大白眼、白肚皮、短手短脚的镇小宁角色。
+- 只有用户没有角色图、没有角色名、没有角色设定时，才从原创主体种子起步。
+- 连续配图只能锁定一个主体，不能混用多个默认主体。
 
 ## 受众
 
@@ -639,15 +651,17 @@ policy:
 5. 是否能指出至少 2 个“像用户”的具体原因。
 6. 如果生成配图，是否根据内容信号自动选择布局。
 7. 如果用户上传或点名角色，是否锁定该角色识别点，而不是回退默认主体或只换颜色？
-8. 如果生成连续配图，相邻图片是否避免重复布局。
-9. 如果生成配图，是否先判断密度档位：轻配图、中密度解释图或高密度工作台。
-10. 当前画面是否符合所选密度预算：轻配图不堆信息，中密度有清晰分区，高密度有主阅读路径。
-11. 低密度和高密度是否在缩略图上有结构差异：低密度是一个动作，高密度是一个系统。
-12. 是否先选择了呈现载体，而不是默认纸笔卡片。
-13. 缩略图继续看时能否看懂主体动作和核心意思。
-14. 如果生成配图，是否列出了 `Exact Chinese text allowed`，并禁止未列出的标题、长句、段落和检查清单。
-15. 如果是窗口实验日志，是否先过滤隐私并生成实验卡，而不是直接画聊天截图。
-16. 如果是窗口实验日志，3-5 张图是否各自代表不同实验节点，并轮换布局和载体。
+8. 如果用户点名“镇小宁 / zhenxiaoning”，是否整组图都使用蓝色圆润身体、黄色触角、红鼻子、大白眼、白肚皮、短手短脚的镇小宁角色？
+9. 如果生成连续配图，是否全组使用同一个主视觉主体，而不是每张换一个默认主体？
+10. 如果生成连续配图，相邻图片是否避免重复布局。
+11. 如果生成配图，是否先判断密度档位：轻配图、中密度解释图或高密度工作台。
+12. 当前画面是否符合所选密度预算：轻配图不堆信息，中密度有清晰分区，高密度有主阅读路径。
+13. 低密度和高密度是否在缩略图上有结构差异：低密度是一个动作，高密度是一个系统。
+14. 是否先选择了呈现载体，而不是默认纸笔卡片。
+15. 缩略图继续看时能否看懂主体动作和核心意思。
+16. 如果生成配图，是否列出了 `Exact Chinese text allowed`，并禁止未列出的标题、长句、段落和检查清单。
+17. 如果是窗口实验日志，是否先过滤隐私并生成实验卡，而不是直接画聊天截图。
+18. 如果是窗口实验日志，3-5 张图是否各自代表不同实验节点，并轮换布局和载体。
 
 ## 常见失败信号
 
@@ -655,6 +669,8 @@ policy:
 - 写成通用爆款模板。
 - 反风格只写“不要 AI 味”，没有具体禁用项。
 - 视觉主体只是装饰，没有参与核心动作。
+- 用户点名镇小宁，却使用空心方盒、线团人、红章操作员、墨点操作员或纸片工人等默认主体。
+- 同一组连续配图混用多个主视觉主体，导致角色资产不稳定。
 - 连续配图只是换文字，画面骨架重复。
 - 画面像资料墙、便签墙或复杂关系图，信息过密，需要放大才能看懂。
 - 把每个诊断点都画出来，而不是只选择一个核心动作。

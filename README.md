@@ -2,6 +2,8 @@
 
 ## 最新更新
 
+- **2026-06-12**：新增固定角色参考目录 `assets/references/characters/`，内置 `zhenxiaoning-reference.png`。点名“镇小宁 / zhenxiaoning”时优先读取固定参考图，连续配图必须保持同一个主体。
+- **2026-06-12**：补齐开源维护材料：`LICENSE`、`NOTICE.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CHANGELOG.md` 和 `OPENAI_CODEX_FOR_OSS_APPLICATION.md`。
 - **2026-06-12**：README 顶部新增更新日志区块，后续功能升级、视觉系统变化和使用方式调整都会优先同步到这里。
 - **2026-06-11**：视觉系统升级为“日常动作隐喻”：先选择找、藏、掀、夹、压、揉、撕、抖、补、贴住等生活动作，再选择载体和布局，避免配图变成搜索框、时间线、卡片或 UI 的直译。
 - **2026-06-11**：GitHub 仓库描述更新为“让 AI 少一点默认味，多一点人味”，README 开头重写为更直接的项目介绍。
@@ -84,6 +86,17 @@
 用户可以上传自己的角色，也可以在没有角色时先从原创主体种子起步。
 
 角色不会只是站在角落当装饰，而是参与核心动作：记录、圈出、筛选、校准、复盘、发布。
+
+如果使用镇小宁，Skill 会优先读取固定参考图：
+
+```text
+assets/references/characters/zhenxiaoning-reference.png
+```
+
+如果使用自己的 IP：
+
+- 短期测试：直接在对话里上传角色图。
+- 长期复用：把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png`，并在 `ip-subject.md` 写清识别点和禁改点。
 
 输出核心文件：`ip-subject.md`
 
@@ -193,6 +206,37 @@
 作品材料：……
 ```
 
+## 固定 IP 参考图
+
+这个仓库内置了镇小宁固定参考图：
+
+![镇小宁固定参考图](assets/references/characters/zhenxiaoning-reference.png)
+
+当用户点名“镇小宁 / zhenxiaoning”时，Skill 会优先读取这张图；如果当前模型环境不能看图，再使用文字识别点锁定：
+
+- 蓝色圆润身体
+- 黄色触角
+- 红鼻子
+- 大白眼
+- 白肚皮
+- 短手短脚
+
+普通用户要使用自己的 IP 时，不需要一开始就改仓库。短期任务可以直接上传角色图；如果要长期复用，再把授权角色图放到：
+
+```text
+assets/references/characters/<subject-slug>-reference.png
+```
+
+然后在 `ip-subject.md` 写清：
+
+- 参考图路径
+- 来源授权
+- 识别点
+- 禁改点
+- 动作库
+- 常见道具
+- 连续配图一致性规则
+
 ## 三种常见用法
 
 ### 方式一：已有作品模式
@@ -262,6 +306,12 @@
 .
 ├── SKILL.md
 ├── README.md
+├── LICENSE
+├── NOTICE.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CHANGELOG.md
+├── OPENAI_CODEX_FOR_OSS_APPLICATION.md
 ├── references/
 │   ├── intake-and-modes.md
 │   ├── style-dna-schema.md
@@ -282,6 +332,10 @@
 │   ├── on-brand.md
 │   └── off-brand.md
 └── assets/
+    ├── references/
+    │   └── characters/
+    │       ├── README.md
+    │       └── zhenxiaoning-reference.png
     ├── examples/
     └── showcase/
 ```
@@ -303,6 +357,19 @@
 | `qa-checklist.md` | 检查输出是否像用户、哪里漂移 |
 | `ai-flavor-diagnostics.md` | 诊断默认 AI 味并给出修复方向 |
 | `style-evolution-log.md` | 记录长期校准后的风格变化 |
+
+## 开源维护
+
+这个项目是一个早期开源 Skill，不是成熟框架。当前更适合用真实任务继续打磨规则和案例。
+
+- 贡献说明：`CONTRIBUTING.md`
+- 安全说明：`SECURITY.md`
+- 变更记录：`CHANGELOG.md`
+- 许可：`LICENSE`
+- 项目边界和 IP 注意事项：`NOTICE.md`
+- Codex for OSS 申请文案：`OPENAI_CODEX_FOR_OSS_APPLICATION.md`
+
+最欢迎的贡献是可复现的失败样本：例如主体漂移、AI 味回潮、布局重复、平台尺寸错位、低密度画成复杂场景、或第三方风格边界不清。
 
 ## 合规边界
 
