@@ -2,7 +2,7 @@
 
 ## 最新更新
 
-- **2026-06-12**：新增固定角色参考目录 `assets/references/characters/`，内置 `zhenxiaoning-reference.png`。点名“镇小宁 / zhenxiaoning”时优先读取固定参考图，连续配图必须保持同一个主体。
+- **2026-06-12**：固定角色参考目录改为“用户自有 IP 放置规范”。仓库不内置项目私有 IP 参考图；需要长期复用角色时，请放入自己的授权 IP 图。
 - **2026-06-12**：补齐开源维护材料：`LICENSE`、`NOTICE.md`、`CONTRIBUTING.md`、`SECURITY.md`、`CHANGELOG.md` 和 `OPENAI_CODEX_FOR_OSS_APPLICATION.md`。
 - **2026-06-12**：README 顶部新增更新日志区块，后续功能升级、视觉系统变化和使用方式调整都会优先同步到这里。
 - **2026-06-11**：视觉系统升级为“日常动作隐喻”：先选择找、藏、掀、夹、压、揉、撕、抖、补、贴住等生活动作，再选择载体和布局，避免配图变成搜索框、时间线、卡片或 UI 的直译。
@@ -86,12 +86,6 @@
 用户可以上传自己的角色，也可以在没有角色时先从原创主体种子起步。
 
 角色不会只是站在角落当装饰，而是参与核心动作：记录、圈出、筛选、校准、复盘、发布。
-
-如果使用镇小宁，Skill 会优先读取固定参考图：
-
-```text
-assets/references/characters/zhenxiaoning-reference.png
-```
 
 如果使用自己的 IP：
 
@@ -208,18 +202,7 @@ assets/references/characters/zhenxiaoning-reference.png
 
 ## 固定 IP 参考图
 
-这个仓库内置了镇小宁固定参考图：
-
-![镇小宁固定参考图](assets/references/characters/zhenxiaoning-reference.png)
-
-当用户点名“镇小宁 / zhenxiaoning”时，Skill 会优先读取这张图；如果当前模型环境不能看图，再使用文字识别点锁定：
-
-- 蓝色圆润身体
-- 黄色触角
-- 红鼻子
-- 大白眼
-- 白肚皮
-- 短手短脚
+这个仓库保留固定角色参考图机制，但不内置项目私有 IP 参考图。
 
 普通用户要使用自己的 IP 时，不需要一开始就改仓库。短期任务可以直接上传角色图；如果要长期复用，再把授权角色图放到：
 
@@ -335,7 +318,7 @@ assets/references/characters/<subject-slug>-reference.png
     ├── references/
     │   └── characters/
     │       ├── README.md
-    │       └── zhenxiaoning-reference.png
+    │       └── <subject-slug>-reference.png
     ├── examples/
     └── showcase/
 ```

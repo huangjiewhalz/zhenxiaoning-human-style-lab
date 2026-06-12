@@ -1,6 +1,6 @@
 ---
 name: style-avatar-workshop
-description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human Style Lab」个人风格资产 Skill。用于用户要求让 AI 更像自己、减少 AI 味、提炼 style DNA、生成反风格清单、建立个人 IP/镇小宁原创角色配图体系、使用日常动作隐喻做手绘去 AI 味配图、把项目或窗口整理成一窗实验日志，或生成可复用个人风格 Skill。不要用于无关的通用 Skill Creator。"
+description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human Style Lab」个人风格资产 Skill。用于用户要求让 AI 更像自己、减少 AI 味、提炼 style DNA、生成反风格清单、建立个人 IP/原创角色配图体系、使用日常动作隐喻做手绘去 AI 味配图、把项目或窗口整理成一窗实验日志，或生成可复用个人风格 Skill。不要用于无关的通用 Skill Creator。"
 ---
 
 # 我的风格分身工坊
@@ -28,7 +28,7 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - `references/skill-pack-template.md`：生成个人风格 Skill 文件夹时使用的文件结构和模板。
 - `references/qa-checklist.md`：交付验收、漂移排查和自测规则。
 - `references/compliance-boundaries.md`：合规边界、拒绝范围和改写方式。
-- `assets/references/characters/`：固定 IP 主体参考图。点名“镇小宁 / zhenxiaoning”时优先读取 `zhenxiaoning-reference.png`；用户要长期使用自己的 IP 时，把授权角色图放到这里并在 `ip-subject.md` 锁定识别点。
+- `assets/references/characters/`：固定 IP 主体参考图。用户要长期使用自己的 IP 时，把授权角色图放到这里并在 `ip-subject.md` 锁定识别点。
 - `assets/examples/subjects/`：原创候选主体小样，仅用于展示可替换主体方向，不作为固定复刻模板。
 - `examples/`：展示案例和自测用的输入样例。
 
@@ -42,7 +42,7 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - **空白起步模式**：用户还没有稳定作品，需要先选择 1-2 个原创风格种子。
 - **反风格起步模式**：用户只知道讨厌什么，例如“AI 味太重”“别像营销号”。
 - **个人风格回归模式**：用户给出草稿、图片或系列内容，反馈“不像我”“AI 味重”“太模板”“太光滑”，需要诊断并修回用户本人风格。
-- **视觉主体模式**：用户想要一个可替换的原创 IP 主体，用于配图、封面、脚本或 UI 解释图。用户上传角色图或点名“镇小宁 / zhenxiaoning”时，必须锁定该主体并贯穿整组图；点名镇小宁时优先读取 `assets/references/characters/zhenxiaoning-reference.png`；用户想长期复用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png`，并生成/更新 `ip-subject.md`；没有任何角色图、角色名或文字设定时，才从 `ip-subject-seeds.md` 推荐 1-2 个候选主体；需要更强反 AI 味时，先从 `handdrawn-style-seeds.md` 选择手绘工具风格。
+- **视觉主体模式**：用户想要一个可替换的原创 IP 主体，用于配图、封面、脚本或 UI 解释图。用户上传角色图或点名角色时，必须锁定该主体并贯穿整组图；用户想长期复用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png`，并生成/更新 `ip-subject.md`；没有任何角色图、角色名或文字设定时，才从 `ip-subject-seeds.md` 推荐 1-2 个候选主体；需要更强反 AI 味时，先从 `handdrawn-style-seeds.md` 选择手绘工具风格。
 - **窗口实验日志模式**：用户要求“把当前窗口/这次对话/这个项目过程做成几张图”“一窗实验日志”“把这次打磨过程可视化”时，读取 `window-experiment-log.md`，把窗口里的起因、卡点、选择、结果和下一步整理成 3-5 张手绘连续图或生图 prompt。
 
 如果信息不足，最多问 5 个问题，优先问会影响资产包质量的问题：使用场景、作品样本、讨厌风格、目标受众、是否需要视觉主体。
@@ -65,7 +65,7 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 2. 读取 `references/skill-pack-template.md` 的 `anti-style.md` 模板，生成 `anti-style.md`：禁用词、禁用句式、讨厌套路、禁止的 AI 味。
 3. 读取 `references/skill-pack-template.md` 的 `content-patterns.md` 模板，生成 `content-patterns.md`：常用标题、开头、段落、结尾、脚本、配图结构。
 4. 需要视觉风格时，读取 `references/visual-ip-system.md` 的 `visual-style-seed.md` 生成模板；如果用户强调去 AI 味或手绘感，再读取 `references/handdrawn-style-seeds.md`，生成 `visual-style-seed.md`。
-5. 需要固定主体时，读取 `references/visual-ip-system.md` 的 `ip-subject.md` 模板，生成 `ip-subject.md`；如果用户上传或点名了角色，必须锁定该角色的识别点并用于后续配图，不得回退到默认主体。用户点名“镇小宁 / zhenxiaoning”但没有上传图时，优先读取 `assets/references/characters/zhenxiaoning-reference.png`；如果当前环境不能看图，再使用镇小宁文字锁定：蓝色圆润身体、黄色触角、红鼻子、大白眼、白肚皮、短手短脚。用户想长期使用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png` 或在当前对话上传，并在 `ip-subject.md` 写清参考图路径、识别点、禁改点和动作库。只有用户没有角色图、角色名和角色设定时，才读取 `references/ip-subject-seeds.md` 选择候选原创主体。
+5. 需要固定主体时，读取 `references/visual-ip-system.md` 的 `ip-subject.md` 模板，生成 `ip-subject.md`；如果用户上传或点名了角色，必须锁定该角色的识别点并用于后续配图，不得回退到默认主体。用户想长期使用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png` 或在当前对话上传，并在 `ip-subject.md` 写清参考图路径、识别点、禁改点和动作库。只有用户没有角色图、角色名和角色设定时，才读取 `references/ip-subject-seeds.md` 选择候选原创主体。
 6. 需要视觉风格、连续配图、平台尺寸适配或布局避重时，读取 `references/layout-selection-engine.md`、`references/presentation-carriers.md`、`references/platform-image-sizes.md` 和 `references/visual-ip-system.md` 的构图规则，生成 `composition-patterns.md`。
 7. 读取 `references/skill-pack-template.md` 的 `prompt-template.md` 模板，生成写作、标题、脚本、配图、UI 文案的复用提示词模板。
 8. 读取 `references/skill-pack-template.md` 的 `qa-checklist.md` 模板，并结合 `references/qa-checklist.md`，生成可执行的 `qa-checklist.md`。

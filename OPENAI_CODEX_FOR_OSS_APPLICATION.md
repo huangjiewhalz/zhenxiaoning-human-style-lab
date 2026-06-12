@@ -72,5 +72,5 @@ The repository is still early. It currently has a small public footprint and is 
 ## Extra Note
 
 ```text
-The project grew from the Zhenxiaoning AI experiment, but the workflow is designed for other creators too. Users can replace the built-in Zhenxiaoning reference with their own authorized IP asset and generate their own personal style Skill pack.
+The project grew from the Zhenxiaoning AI experiment, but the public repository does not publish Zhenxiaoning as a reusable fixed IP asset. The workflow is designed for other creators to add their own original or authorized IP asset and generate their own personal style Skill pack.
 ```
