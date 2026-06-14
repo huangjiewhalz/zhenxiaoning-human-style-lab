@@ -8,3 +8,9 @@ dist/
 build/
 tmp/
 temp/
+references/ip-subject.local.md
+references/style-reference.local.md
+assets/references/characters/*private*
+assets/references/characters/*local*
+assets/references/styles/*private*
+assets/references/styles/*local*

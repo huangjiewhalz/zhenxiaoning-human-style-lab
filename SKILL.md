@@ -1,9 +1,9 @@
 ---
 name: style-avatar-workshop
-description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human Style Lab」个人风格资产 Skill。用于用户要求让 AI 更像自己、减少 AI 味、提炼 style DNA、生成反风格清单、建立个人 IP/原创角色配图体系、使用日常动作隐喻做手绘去 AI 味配图、把项目或窗口整理成一窗实验日志，或生成可复用个人风格 Skill。不要用于无关的通用 Skill Creator。"
+description: "创建或使用「镇小宁风格实验室 / Zhenxiaoning Human Style Lab」个人风格资产 Skill。用于用户要求让 AI 更像自己、减少 AI 味、提炼 style DNA、生成反风格清单、建立个人 IP/原创角色配图体系、使用日常动作隐喻做手绘去 AI 味配图、首跑引导、Before/After 对比、风格漂移评分、失败样本沉淀、一键内容改造、把项目或窗口整理成一窗实验日志，或生成可复用个人风格 Skill。不要用于无关的通用 Skill Creator。"
 ---
 
-# 我的风格分身工坊
+# 镇小宁风格实验室
 
 ## 定位
 
@@ -14,10 +14,11 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 ## 资源索引
 
 - `references/intake-and-modes.md`：选择已有作品、空白起步、反风格起步、个人风格回归、视觉主体模式。
+- `references/experience-workflows.md`：首跑引导、Before/After 对比、风格漂移评分、失败样本库和一键内容改造。
 - `references/style-dna-schema.md`：个人风格 DNA 的提炼维度和证据写法。
 - `references/starter-style-seeds.md`：用户没有作品时可用的原创风格种子。
 - `references/ai-flavor-recovery-system.md`：把默认 AI 味诊断并修回用户本人风格的流程、知识卡片和编辑学习记录。
-- `references/handdrawn-style-seeds.md`：反 AI 味手绘工具风格种子，包括默认铅笔草图风、蜡笔涂鸦风和红笔批改风。
+- `references/handdrawn-style-seeds.md`：反 AI 味手绘工具风格种子，包括默认白底彩铅草稿风、铅笔草图风和红笔批改风。
 - `references/visual-ip-system.md`：白底手绘解释图种子、可替换 IP 主体和构图规则。
 - `references/layout-selection-engine.md`：根据用户上传内容自动选择布局、规划系列配图和沉淀避重规则。
 - `references/presentation-carriers.md`：选择信息呈现载体，避免总是回到纸、笔、卡片和文件夹。
@@ -28,6 +29,8 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - `references/skill-pack-template.md`：生成个人风格 Skill 文件夹时使用的文件结构和模板。
 - `references/qa-checklist.md`：交付验收、漂移排查和自测规则。
 - `references/compliance-boundaries.md`：合规边界、拒绝范围和改写方式。
+- `references/style-reference.local.md`：可选的本机私有默认风格参考。用于锁定创作者本人本机默认图像质感，不进入公开仓库；存在时优先于文字风格描述。
+- `references/ip-subject.local.md`：可选的本机私有默认角色绑定。用于创作者本人本机使用，不进入公开仓库；存在时优先于公开固定目录。
 - `assets/references/characters/`：固定 IP 主体参考图。用户要长期使用自己的 IP 时，把授权角色图放到这里并在 `ip-subject.md` 锁定识别点。
 - `assets/examples/subjects/`：原创候选主体小样，仅用于展示可替换主体方向，不作为固定复刻模板。
 - `examples/`：展示案例和自测用的输入样例。
@@ -42,7 +45,13 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - **空白起步模式**：用户还没有稳定作品，需要先选择 1-2 个原创风格种子。
 - **反风格起步模式**：用户只知道讨厌什么，例如“AI 味太重”“别像营销号”。
 - **个人风格回归模式**：用户给出草稿、图片或系列内容，反馈“不像我”“AI 味重”“太模板”“太光滑”，需要诊断并修回用户本人风格。
-- **视觉主体模式**：用户想要一个可替换的原创 IP 主体，用于配图、封面、脚本或 UI 解释图。用户上传角色图或点名角色时，必须锁定该主体并贯穿整组图；用户想长期复用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png`，并生成/更新 `ip-subject.md`；没有任何角色图、角色名或文字设定时，才从 `ip-subject-seeds.md` 推荐 1-2 个候选主体；需要更强反 AI 味时，先从 `handdrawn-style-seeds.md` 选择手绘工具风格。
+- **新手首跑模式**：用户第一次使用、刚安装、问“怎么用”或“先测试一下”，读取 `experience-workflows.md`，输出最小材料、会生成什么、第一轮测试任务和下一步。
+- **短句入口模式**：用户用自然短句表达目标，例如“用镇小宁风格实验室帮我做出这个 Skill 的特点和用法，我要发在小红书上”，读取 `experience-workflows.md` 的短句入口规则，自动推断为一键内容改造、平台适配和展示内容生成；默认直接在聊天里交付文案、标题、配图规划和图片结果，不写文件或发布包；能默认就不要追问。
+- **Before/After 对比模式**：用户想看效果、做对比或展示价值时，读取 `experience-workflows.md`，用同一素材输出默认 AI 味版本、风格资产版本、改动说明和评分卡。
+- **风格漂移评分模式**：用户问“像不像我”“这版怎么样”“帮我检查”时，读取 `experience-workflows.md` 和 `qa-checklist.md`，输出评分卡、最该修的 3 件事和下一版规则。
+- **失败样本库模式**：用户反馈“不像我”“太 AI”“太满”“角色不对”“以后不要这样”时，读取 `experience-workflows.md`，记录失败样本、新增反风格规则、影响文件和修订小样。
+- **一键内容改造模式**：用户给文章、帖子、链接、产品说明、长对话或草稿，要求“用我的 Skill 处理”“改成我的风格”“做成配图”时，读取 `experience-workflows.md`，先拆可用事实和不可学习部分，再输出改写、标题、配图规划和评分卡。
+- **视觉主体模式**：用户想要一个可替换的原创 IP 主体，用于配图、封面、脚本或 UI 解释图。主体第一梯队是“当前对话上传角色图”和“本机私有默认角色绑定”：用户在当前对话上传角色图时，必须优先锁定当前上传图并贯穿整组图；没有本轮上传图但 `references/ip-subject.local.md` 存在且明确允许自动使用时，可把其中绑定的本机私有角色作为默认主体。不得因为 `assets/references/characters/` 里已有其他参考图就改用旧角色。用户点名角色时，优先检查当前上传图和 `ip-subject.local.md`；只有用户明确指定固定参考图路径，或 `ip-subject.md` 写明当前角色对应路径，才读取 `assets/references/characters/`。如果用户点名“镇小宁形象”“镇小宁 IP”“我的角色”或其他具体角色，但没有上传图、本机私有绑定、指定路径或绑定文件，不得用线团人、空心方盒等默认主体代替；先要求上传角色图或改为无角色配图规划。用户想长期复用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png`，并生成/更新 `ip-subject.md` 或本机私有的 `ip-subject.local.md`；没有任何角色图、角色名、私有默认绑定或文字设定时，才从 `ip-subject-seeds.md` 推荐 1-2 个候选主体；默认手绘风格读取 `handdrawn-style-seeds.md` 后优先使用白底彩铅草稿风。如果存在 `references/style-reference.local.md`，先读取它锁定本机默认质感。
 - **窗口实验日志模式**：用户要求“把当前窗口/这次对话/这个项目过程做成几张图”“一窗实验日志”“把这次打磨过程可视化”时，读取 `window-experiment-log.md`，把窗口里的起因、卡点、选择、结果和下一步整理成 3-5 张手绘连续图或生图 prompt。
 
 如果信息不足，最多问 5 个问题，优先问会影响资产包质量的问题：使用场景、作品样本、讨厌风格、目标受众、是否需要视觉主体。
@@ -65,13 +74,14 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 2. 读取 `references/skill-pack-template.md` 的 `anti-style.md` 模板，生成 `anti-style.md`：禁用词、禁用句式、讨厌套路、禁止的 AI 味。
 3. 读取 `references/skill-pack-template.md` 的 `content-patterns.md` 模板，生成 `content-patterns.md`：常用标题、开头、段落、结尾、脚本、配图结构。
 4. 需要视觉风格时，读取 `references/visual-ip-system.md` 的 `visual-style-seed.md` 生成模板；如果用户强调去 AI 味或手绘感，再读取 `references/handdrawn-style-seeds.md`，生成 `visual-style-seed.md`。
-5. 需要固定主体时，读取 `references/visual-ip-system.md` 的 `ip-subject.md` 模板，生成 `ip-subject.md`；如果用户上传或点名了角色，必须锁定该角色的识别点并用于后续配图，不得回退到默认主体。用户想长期使用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png` 或在当前对话上传，并在 `ip-subject.md` 写清参考图路径、识别点、禁改点和动作库。只有用户没有角色图、角色名和角色设定时，才读取 `references/ip-subject-seeds.md` 选择候选原创主体。
+5. 需要固定主体时，读取 `references/visual-ip-system.md` 的 `ip-subject.md` 模板，生成 `ip-subject.md`；如果用户在当前对话上传角色图，当前上传图是最高优先级，必须锁定该角色识别点并用于后续配图，不得回退到默认主体，也不得自动改用 `assets/references/characters/` 里的旧参考图。若没有本轮上传图，但存在本机私有 `references/ip-subject.local.md` 且其中明确允许自动使用本机默认角色，则读取该文件并使用它绑定的角色。只有用户明确指定某个固定参考图路径，或 `ip-subject.md` 已经把当前角色绑定到该路径，才读取目录里的对应图片。用户点名具体角色但没有提供图片、本机私有绑定、路径或绑定时，不得读取默认主体种子顶替；先说明缺少角色参考，并要求上传角色图或改为无角色配图规划。用户想长期使用自己的 IP 时，提醒把授权角色图放到 `assets/references/characters/<subject-slug>-reference.png` 或在当前对话上传，并在 `ip-subject.md` 或不提交的 `ip-subject.local.md` 写清参考图路径、识别点、禁改点和动作库。只有用户没有角色图、角色名、私有默认绑定和角色设定时，才读取 `references/ip-subject-seeds.md` 选择候选原创主体。
 6. 需要视觉风格、连续配图、平台尺寸适配或布局避重时，读取 `references/layout-selection-engine.md`、`references/presentation-carriers.md`、`references/platform-image-sizes.md` 和 `references/visual-ip-system.md` 的构图规则，生成 `composition-patterns.md`。
 7. 读取 `references/skill-pack-template.md` 的 `prompt-template.md` 模板，生成写作、标题、脚本、配图、UI 文案的复用提示词模板。
 8. 读取 `references/skill-pack-template.md` 的 `qa-checklist.md` 模板，并结合 `references/qa-checklist.md`，生成可执行的 `qa-checklist.md`。
 9. 用户强调去 AI 味、风格回归或长期校准时，读取 `references/ai-flavor-recovery-system.md`，生成 `ai-flavor-diagnostics.md`、`knowledge-cards.md` 和 `style-evolution-log.md`。
-10. 用户要求把当前窗口、项目过程、对话迭代或 AI 实验过程做成图文复盘时，读取 `references/window-experiment-log.md` 和 `references/platform-image-sizes.md`，先生成实验卡、平台尺寸计划、布局规划表和中文短词白名单；有生图能力时再生成图片，没有生图能力时输出可复制 prompt。
-11. 读取 `references/skill-pack-template.md` 里的正例和反例模板段落；必要时参考 `examples/blank-start-example.md` 和 `examples/existing-works-example.md` 的写法，生成正例文件和反例文件，只学习结构，不照抄内容。
+10. 用户需要首跑引导、Before/After、风格漂移评分、失败样本库或一键内容改造时，读取 `references/experience-workflows.md`，按对应输出模板交付；第三方文章只能当观点和事实素材，不提炼原作者风格。
+11. 用户要求把当前窗口、项目过程、对话迭代或 AI 实验过程做成图文复盘时，读取 `references/window-experiment-log.md` 和 `references/platform-image-sizes.md`，先生成实验卡、平台尺寸计划、布局规划表和中文短词白名单；有生图能力时再生成图片，没有生图能力时输出可复制 prompt。
+12. 读取 `references/skill-pack-template.md` 里的正例和反例模板段落；必要时参考 `examples/blank-start-example.md` 和 `examples/existing-works-example.md` 的写法，生成正例文件和反例文件，只学习结构，不照抄内容。
 
 ### 4. 生成可安装 Skill
 
@@ -102,6 +112,8 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - 有作品时优先提炼真实证据；没作品时只给“风格种子”，不得冒充真实个人风格。
 - 视觉风格可以把“白底、手绘、留白、少量批注、固定主体参与核心动作”作为可选工具语言，但默认目标是用户自己的风格资产；必须生成原创主体、原创构图和来自当前内容的新隐喻，不能复刻第三方 IP、公开案例物件组合或画面骨架。
 - 连续配图必须使用同一个视觉主体。用户已点名或上传主体时，整组图不得混用墨点操作员、纸片工人、红章操作员、线团人、空心方盒等默认主体种子；默认主体种子只在完全没有用户主体时作为候选。
+- 主体来源不得抢占：当前对话上传图 > 本机私有 `ip-subject.local.md` 默认绑定 > 用户明确指定的固定参考图路径 > `ip-subject.md` 绑定的固定参考图 > 用户文字设定 > 默认主体种子。`assets/references/characters/` 里的图片只是长期资产库，不是自动候选池。
+- 点名具体角色但缺少参考图时，不能用默认主体补位。`镇小宁风格实验室` 是 Skill 名；在公开通用环境里，它不自动等于使用镇小宁角色。在创作者本人本机环境里，如果 `ip-subject.local.md` 明确绑定并允许默认使用镇小宁，则可以把镇小宁作为默认主体。否则只有用户说“镇小宁形象 / 镇小宁 IP / 镇小宁角色”且有上传图、私有绑定、指定路径或绑定文件时，才能生成该角色。
 - 视觉输出先自动判断密度档位、隐喻方式、构图尺度和留白偏好：轻配图、中密度解释图或高密度工作台；秒懂型、延迟型或系统型；局部轻描、小场景、完整场景或工作台；自动、留白多、平衡或内容更丰富。不确定时优先轻配图、延迟型隐喻和局部轻描；用户明确说“留白多一点”“更精致”“内容更丰富”“一张讲清楚”时，优先执行用户偏好。
 - 密度差异必须是结构差异，不只是文字或纸片数量差异：轻配图是一个小局部里的日常动作关系，高密度是一个系统；连续配图要轮换纸片、卡片、日历、地图、控制台、对话、空间剖面和真实道具等信息承载物。
 - 视觉隐喻先从日常动作出发，再选载体：这件事像“从被子下面找纸条”“把桌布一抖留下有用颗粒”“把太光滑的稿纸揉皱再贴补丁”“把同一张图塞进不同旧相框”中的哪一种动作关系。载体只作辅助，必须带隐喻方式、日常动作隐喻、遮挡关系、露出线索和视觉隐喻动作；低密度配图允许 2-4 个物件，但必须围绕一个清楚动作，不要变成道具摆拍、图标说明或靠文字解释。
@@ -109,6 +121,11 @@ description: "创建或使用「我的风格分身工坊 / Zhenxiaoning Human St
 - 图片尺寸必须适配平台和位置：小红书、微信公众号、X、Instagram、竖屏短视频、PPT、论坛等不能默认都用 16:9。需要平台发布时先读取 `platform-image-sizes.md`，输出平台尺寸计划、比例、安全区和是否需要重排构图；同一内容多平台发布时优先生成横版、竖版、方版的同源多版，不把一张图简单裁切到所有平台。
 - 窗口实验日志模式只提炼当前窗口的实验节点，不转写完整聊天记录，不暴露私密信息、密钥、未授权素材或第三方可识别风格。每张图只讲一个节点，默认 3-5 张，必须先给布局规划表和允许中文短词。
 - 遇到流程卡点、素材复用、信息筛选、想法成型、经验沉淀、信任建立等常见抽象主题时，先读取 `layout-selection-engine.md` 的公开案例避让规则，再从用户自己的材料、行业场景、角色动作和平台语境里重新发明画面。
+- 新用户第一次使用时，不要先要求完整资产包；读取 `experience-workflows.md`，先给最小材料清单、首轮测试任务和可验证输出。
+- 用户用短句表达目标时，优先直接产出第一版；自动补齐平台尺寸、输出结构、配图规划和评分卡，最多追问 1 个关键问题。短句入口默认不是写文件入口，除非用户明确要求写文件、生成发布包或保存到项目。
+- 需要展示价值时，必须能做 Before/After：默认 AI 味版本、使用风格资产后的版本、改动说明和风格漂移评分卡。
+- 用户反馈“不像我”时，必须沉淀失败样本：记录漂移点、新增反风格规则、影响文件和修订小样，不要只重生成。
+- 一键内容改造必须先区分可用事实和不可直接学习的部分；第三方内容不能被提炼成原作者风格或结构模板。
 - 反风格清单要具体到词、句式、结构、画面套路和失败信号。
 - 去 AI 味不是绕过检测器，而是识别默认 AI 痕迹后，用用户自己的风格证据、知识卡片和编辑反馈把内容拉回本人。
 - QA checklist 必须可执行，能判断“像不像用户”和“哪里漂了”。

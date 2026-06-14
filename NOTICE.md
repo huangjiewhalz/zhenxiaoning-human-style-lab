@@ -4,7 +4,7 @@ Zhenxiaoning Human Style Lab is an open source Codex Skill project for personal 
 
 ## Character Assets
 
-This repository does not publish a built-in fixed IP reference for reuse. If you fork this project to build your own personal style Skill, add your own original or authorized IP asset:
+If you fork this project to build your own personal style Skill, use your own original or authorized IP asset for any fixed visual subject:
 
 ```text
 assets/references/characters/<subject-slug>-reference.png

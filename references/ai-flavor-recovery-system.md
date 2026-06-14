@@ -18,6 +18,7 @@
 - **产前约束**：用户还没生成内容，要求先避开 AI 味。
 - **视觉复盘**：用户给出生成图，要求判断哪里太 AI。
 - **长期校准**：用户多次反馈“不像我”，需要沉淀新的风格规则。
+- **效果展示**：用户要求 Before/After、评分或“看看修完差在哪”，需要读取 `experience-workflows.md`。
 
 ## 诊断维度
 
@@ -72,7 +73,7 @@
 2. **查 AI 味**：按“文本 AI 味”或“视觉 AI 味”表格标出问题，不只说“太 AI”。
 3. **回到用户**：读取 `style-dna.md`、`anti-style.md` 和 `content-patterns.md`，决定哪些句式、节奏和结构要恢复。
 4. **补具体材料**：需要产品、个人经历、固定说法、链接、价格、角色设定时，读取或生成 `knowledge-cards.md`。
-5. **复查漂移**：按 `qa-checklist.md` 判断是否像用户；仍不像时写入 `style-evolution-log.md`，不要悄悄覆盖旧规则。
+5. **复查漂移**：按 `qa-checklist.md` 和 `experience-workflows.md` 的风格漂移评分卡判断是否像用户；仍不像时写入失败样本记录或 `style-evolution-log.md`，不要悄悄覆盖旧规则。
 
 ## ai-flavor-diagnostics.md 模板
 
@@ -107,6 +108,8 @@
 ## 修复策略
 
 ## 修复后自检
+
+## 风格漂移评分卡
 ```
 
 ## knowledge-cards.md 模板

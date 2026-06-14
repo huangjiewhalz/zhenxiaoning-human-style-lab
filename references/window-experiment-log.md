@@ -113,7 +113,7 @@
 ## 视觉规则
 
 - 默认使用白底手绘解释图，不做商业海报。
-- 默认优先铅笔草图风；如果用户想更松弛，可以用蜡笔涂鸦风。
+- 默认优先白底彩铅草稿风；如果用户想更克制、更清爽，可以用铅笔草图风。
 - 用户上传角色或点名角色时，角色必须参与核心动作，不做角落装饰。
 - 每张图只讲一个节点，不把整个窗口全部塞进单图。
 - 默认按目标平台适配尺寸：论坛/PPT/正文展示可用 16:9，小红书优先 3:4 或 4:5，公众号头图使用 2.35:1 并保留中心安全区，竖屏短视频使用 9:16。没有平台时再用通用 16:9。
@@ -184,7 +184,7 @@ Density: {轻配图/中密度解释图/高密度工作台}
 Carrier: {chosen carrier}
 Layout: {chosen layout}
 Main action: {subject action}
-Visual style: {pencil sketch / crayon doodle / red-pen review}, visible hand-drawn texture, imperfect lines, spacious composition.
+Visual style: {white-background colored-pencil sketch / pencil sketch / red-pen review}, visible hand-drawn texture, imperfect lines, spacious composition.
 
 Exact Chinese text allowed: {short words only}
 Do not add any other Chinese or English text.
@@ -195,5 +195,5 @@ Avoid polished vector art, 3D rendering, glossy gradients, commercial mascot sty
 ## 示例触发
 
 ```text
-使用我的风格分身工坊，把当前窗口整理成 4 张“一窗实验日志”手绘图。使用我上传的角色，风格保持铅笔草图，留白多一点，适合发参赛帖。
+使用镇小宁风格实验室，把当前窗口整理成 4 张“一窗实验日志”手绘图。使用我上传的角色，风格保持铅笔草图，留白多一点，适合发参赛帖。
 ```

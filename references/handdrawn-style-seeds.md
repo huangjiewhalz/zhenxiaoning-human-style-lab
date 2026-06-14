@@ -8,14 +8,15 @@
 - 一次只推荐 1-2 种手绘风格。
 - 每种风格都要写清适合、不适合、颜色、线条、失败信号。
 - 不模仿具体画师、博主、品牌或可识别作品。
-- 如果用户没有偏好，默认从“铅笔草图风”起步；需要更温暖或更个人 IP 时选“蜡笔涂鸦风”；需要诊断、批改或去 AI 味修复时选“红笔批改风”。
+- 如果用户没有偏好，默认从“白底彩铅草稿风”起步；需要更克制、更清爽、更像思考草稿时选“铅笔草图风”；需要诊断、批改或去 AI 味修复时选“红笔批改风”。
+- 本文件里的线团人、红章操作员、空心方盒等主体例子只在用户没有上传、点名或设定任何角色时可用。用户点名具体角色但缺少参考图时，不得用这些主体顶替；先要求角色图或改为无角色配图规划。
 
 ## 当前正式风格
 
 只维护三种核心手绘风格，避免变成风格大全：
 
-- **铅笔草图风**：默认主风格，适合大多数正文配图、产品解释、轻知识和教程。
-- **蜡笔涂鸦风**：温暖变体，适合个人 IP、情绪感、轻松内容和更有新鲜感的正文配图。
+- **白底彩铅草稿风**：默认主风格，适合个人 IP、正文配图、轻知识、情绪感和更有新鲜感的内容解释。它对应用户指定的参考图质感：白底、黑灰铅笔打稿线、彩铅颗粒填色、手写云朵批注和松弛小装饰。
+- **铅笔草图风**：克制变体，适合更清爽的产品解释、轻知识、教程和需要低干扰的正文配图。
 - **红笔批改风**：诊断专用，适合去 AI 味、反风格清单、标题修改和文案 QA。
 
 暂不默认加入 Riso、拼贴、木刻、纸艺等风格。它们可以作为未来实验方向，但不进入自动选择，除非用户明确要求“更封面感”“更强视觉冲击”或“想试实验风格”。
@@ -28,10 +29,10 @@
 
 ### 适合
 
-- 默认正文配图。
+- 用户明确要求更克制、更清爽、更像思考草稿的正文配图。
 - 产品解释、功能说明、轻知识、教程步骤。
 - 个人风格资产、写作结构、内容工作流、AI 味诊断前的轻量解释。
-- 用户没有指定画风，但希望“别太 AI、别太花、别太幼稚”的场景。
+- 用户希望“别太花、别太幼稚、信息更干净”的场景。
 - 需要留白多、主体小、局部轻描的配图。
 
 ### 不适合
@@ -124,11 +125,11 @@ polished vector art, 3D rendering, glossy gradients, dense arrows, full scene, s
 - 为了“铅笔感”变成全黑白，丢掉角色识别点。
 - 只有道具，没有主体参与核心动作。
 
-## 蜡笔涂鸦风
+## 白底彩铅草稿风
 
 ### 一句话
 
-像创作者拿几支蜡笔在白纸上认真解释一个想法：颜色不均匀，边缘有颗粒感，线条有笨拙感，但结构仍然清楚。
+像创作者在白纸上先用铅笔打线稿，再用彩铅一层层涂出角色和道具：轮廓有草稿感，颜色有颗粒和斜向笔触，旁边有手写云朵批注、下划线、小星星和随手箭头。
 
 ### 适合
 
@@ -136,6 +137,8 @@ polished vector art, 3D rendering, glossy gradients, dense arrows, full scene, s
 - 创作者状态、成长、情绪、轻知识。
 - “AI 不像我”“从混乱到清楚”“把风格沉淀成资产”这类有一点人的手感的主题。
 - 需要比黑白线稿更温暖、更有新鲜感的正文配图。
+- Skill 默认风格；用户没有偏好时优先选择它，再根据内容调整密度和留白。
+- 需要角色显得有生命力，但仍像真实手画出来，而不是 3D 吉祥物或商业插画。
 
 ### 不适合
 
@@ -143,51 +146,57 @@ polished vector art, 3D rendering, glossy gradients, dense arrows, full scene, s
 - 复杂系统图。
 - 需要精确可读的小字信息图。
 - 法律、医疗、金融等高严肃度内容。
+- 用户明确要求极简、克制、低颜色干扰的草稿图。
 
 ### 视觉材料
 
-- 白纸或浅色纸面。
-- 蜡笔质感线条。
-- 不均匀色块。
-- 边缘轻微颗粒和断裂。
-- 少量手写中文短词。
+- 纯白纸或很浅的纸面，不加背景色块。
+- 铅笔或深灰彩铅结构线，允许重复描边和轻微歪线。
+- 彩铅斜向填色、短线叠色和颗粒，色块不均匀，允许露白。
+- 角色和重要道具可以有较完整填色，但必须保留明显彩铅笔触。
+- 少量手写中文短词、云朵批注、蓝色下划线、小星星、小爱心和随手箭头。
+- 允许局部轻微高光，但不能变成光滑 3D 或喷枪效果。
 
 ### 颜色规则
 
-- 主线：深灰、蓝黑或深棕，不要纯数字黑的硬边。
-- 主色：选 2-3 个蜡笔色，例如蓝、黄、红、橙、绿色。
+- 主线：深灰、蓝黑、深棕或彩铅黑，不要纯数字黑的硬边。
+- 主色：选 2-4 个彩铅色，常用蓝、黄、红、浅紫、浅橙。
+- 角色识别色要保留，但不要做成光滑渐变或 3D 明暗。
 - 背景保持干净，不要做满版彩色。
-- 色块不追求涂满，允许露白。
+- 色块不追求涂满，允许露白、交叉笔触、斜向涂痕和轻微涂出边界。
 
 ### 线条规则
 
-- 线条可以歪、抖、重复描边。
-- 形状可以不完全闭合。
-- 箭头和框都要像手画的。
-- 不能变成矢量图标、商业插画或儿童贴纸。
+- 线条可以歪、抖、重复描边，但关键轮廓要清楚。
+- 形状可以不完全闭合，局部有铅笔打稿痕迹。
+- 填色以短线、斜线、轻擦痕、反复叠色为主，避免大面积平涂。
+- 箭头、云朵框、星星、下划线都要像手画的，不能像矢量装饰。
+- 不能变成矢量图标、商业插画、儿童贴纸或低龄涂鸦。
 
 ### 适合的主体
 
 - 纸片工人：适合文档、风格归档。
 - 线团人：适合从混乱样本里抽线索。
 - 空心方盒：适合风格资产包和模块化表达。
+- 用户上传角色或本机私有默认角色：保留识别点，再转换成彩铅颗粒手绘质感。
 
 ### 禁止画法
 
-- 不要画成幼儿园儿童画。
-- 不要满屏彩色，保持克制。
-- 不要可爱吉祥物化。
-- 不要 3D、渐变、光影、精修插画。
+- 不要画成幼儿园儿童画、儿童贴纸或低幼贺卡。
+- 不要满屏彩色，保持白底和留白。
+- 不要可爱吉祥物化到失去原角色识别点。
+- 不要 3D、渐变、光影、精修插画、商业 mascot 海报。
+- 不要纯蜡笔粗块面，也不要纯黑白铅笔草稿；必须有彩铅颗粒、铅笔打稿线和手绘填色。
 - 不要模仿任何具体画师。
 
 ### 示例 prompt
 
 ```text
-Create a single crayon-style illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
-Use a clean white paper background. Draw with uneven wax-crayon strokes, slightly broken edges, visible hand pressure, and imperfect hand-drawn shapes. Keep the layout sparse and readable.
+Create a single white-background colored-pencil sketch illustration for a Chinese article, composed natively for the target platform size and aspect ratio. If no platform or size is specified, use a horizontal 16:9 composition.
+Use a clean white paper background. Draw with loose gray-black pencil construction lines, colored-pencil outlines, visible grainy pencil strokes, diagonal colored-pencil hatching, repeated hand pressure marks, and imperfect hand-drawn shapes. Add a few handwritten cloud notes, blue underline strokes, small stars or hearts, and casual arrows. The result should match a warm colored-pencil sketch made by hand, not a children's crayon drawing, not a polished vector illustration, and not a 3D mascot render.
 
 Original subject:
-线团人, a small original figure made of loose crayon-like threads with a tiny clip body, serious and not cute.
+User's locked IP subject or original subject, converted into white-background colored-pencil sketch texture while preserving all identity points. If no user subject exists, use a small original subject seed, serious and not childish.
 
 Topic:
 让 AI 记住我的风格，而不是每次从零猜。
@@ -196,9 +205,7 @@ Meaning:
 The user needs reusable style assets, not a longer prompt every time.
 
 Scene:
-On the left, messy crayon notes labeled "旧作品", "讨厌词", "常用结构" are tangled together.
-The thread figure pulls three colored crayon strings from the mess and clips them onto three cards labeled "语气", "结构", "禁用词".
-On the right, a small output card says "像我一点".
+Use a light local close-up, not a full room. The subject actively handles the core metaphor: pulling useful style clues out of a messy little pile, then placing them into three hand-drawn containers labeled "语气", "结构", "禁用词". Add a few hand-drawn cloud notes, tiny stars, small arrows, and uneven colored-pencil shading. Keep the text sparse.
 
 Short Chinese notes:
 旧作品 / 语气 / 结构 / 禁用词 / 像我一点 / 待校准
@@ -207,19 +214,20 @@ Exact Chinese text allowed:
 旧作品 / 语气 / 结构 / 禁用词 / 像我一点 / 待校准
 
 Color:
-Use a small crayon palette: blue, yellow, red, orange, and dark gray. Leave plenty of white space. Color blocks should be uneven and handmade.
+Use a small colored-pencil palette: blue, yellow, red, light purple, orange, and dark gray. Leave plenty of white space. Color blocks should show diagonal pencil hatching, grain, repeated pressure marks, and small areas of white paper showing through.
 
 Avoid:
-polished vector art, 3D rendering, glossy gradients, dense arrows, slide layout, commercial mascot style, children's poster style, copied examples, third-party IP, and corner titles.
+polished vector art, 3D rendering, glossy gradients, airbrushed lighting, dense arrows, slide layout, commercial mascot style, children's crayon poster, wax-crayon blocky texture, copied examples, third-party IP, and corner titles.
 ```
 
 ### QA 失败信号
 
-- 看起来像 AI 精修插画，而不是蜡笔。
+- 看起来像 AI 精修插画，而不是彩铅手绘。
 - 太儿童画，读者会觉得低幼。
 - 色彩太满，正文配图变成海报。
 - 主体只是可爱装饰，没有完成核心动作。
 - 中文标签太多或太小。
+- 只有纯蜡笔粗糙块面，没有铅笔结构线和彩铅斜向填色。
 
 ## 红笔批改风
 
