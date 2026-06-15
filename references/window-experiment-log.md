@@ -118,7 +118,7 @@
 - 每张图只讲一个节点，不把整个窗口全部塞进单图。
 - 默认按目标平台适配尺寸：论坛/PPT/正文展示可用 16:9，小红书优先 3:4 或 4:5，公众号头图使用 2.35:1 并保留中心安全区，竖屏短视频使用 9:16。没有平台时再用通用 16:9。
 - 每张图至少保留明显留白。低密度至少 55% 留白，中密度至少 35%，高密度至少 15%。
-- 中文只允许短词，必须列入 `Exact Chinese text allowed`。不要让模型自动生成标题、长句、段落或检查清单。
+- 中文只允许短词，必须列入 `Exact Chinese text allowed`。短词由 Agent 从每个实验节点自动提取，不要求用户手动列词。默认直接把这些短词画进图里，像手写批注、云朵短词、小标签或纸角字迹；不要让模型自动生成标题、长句、段落或检查清单，也不要把所有气泡、标签和卡片留空后再说本地字体排版。
 
 ## 载体建议
 
@@ -186,8 +186,8 @@ Layout: {chosen layout}
 Main action: {subject action}
 Visual style: {white-background colored-pencil sketch / pencil sketch / red-pen review}, visible hand-drawn texture, imperfect lines, spacious composition.
 
-Exact Chinese text allowed: {short words only}
-Do not add any other Chinese or English text.
+Exact Chinese text allowed: {Agent extracts short words from this scene node automatically}
+Directly draw these exact short Chinese words in the image as small handwritten notes, cloud notes, tiny labels, or exposed note corners. Do not leave all speech bubbles, cards, note papers, or labels blank. Do not add any other Chinese or English text.
 
 Avoid polished vector art, 3D rendering, glossy gradients, commercial mascot style, chat transcript screenshots, file-tree screenshots, dense arrows, copied examples, third-party IP, recognizable living-artist style, and large title text.
 ```

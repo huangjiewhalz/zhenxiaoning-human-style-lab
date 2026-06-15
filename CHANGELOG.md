@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-06-15
+
+- Tightened the one-sentence self-showcase workflow: short prompts asking the Skill to explain itself now default to a general showcase with copy, structure, image planning, density/layout choices, short Chinese annotations, and image generation when available.
+- Added stronger runtime rules so available image-generation tools must be invoked instead of stopping at prompts or plans.
+- Clarified local private subject and style binding behavior: when configured, self-showcase images use the local default subject as the main visual actor and the local hand-drawn style by default.
+- Split final fixed-IP artwork from text-only direction previews: reference-capable tools should produce final IP-consistent artwork, while text-only generation may produce a clearly labeled direction preview that is not final IP-consistent output.
+- Added subject-drift safeguards for direction previews: human portraits, abstract portraits, characterless images, generic replacement mascots, and default placeholder subjects are treated as failures that require retry or a reference image.
+- Clarified that “more like you” means matching the user's expression style, judgment, structure, rhythm, and visual preferences, not drawing a real-person portrait.
+
 ## 2026-06-14
 
 - Added bilingual README entry points with `README.md` for Chinese users and `README.en.md` for English users.

@@ -12,6 +12,8 @@ It is not a generic Skill Creator. It focuses on one concrete problem:
 
 ## Latest Updates
 
+- **2026-06-15**: Strengthened the one-sentence entry experience. A short natural-language request now defaults to a general showcase and automatically prepares copy, title structure, visual planning, density/layout choices, short Chinese annotations, and image generation when available.
+- **2026-06-15**: Clarified the boundary between final fixed-IP artwork and direction previews. Final IP-consistent artwork requires reference-image input; text-only generation may produce a clearly labeled non-final direction preview with QA checks against subject drift.
 - **2026-06-14**: Added five practical workflows so users can test the Skill before building a full style asset pack:
   - **First-run onboarding**: asks only for the minimum useful material and gives a first test task.
   - **Before/After comparison**: shows the difference between a default AI-flavored version and a style-asset version.
@@ -39,6 +41,8 @@ The Skill should infer the target format and generate:
 - a style drift scorecard
 
 You can replace Xiaohongshu with X, WeChat Official Account, Instagram, video cover, forum post, or another platform.
+
+If no platform is specified, the Skill defaults to a general showcase: it explains what the Skill does, what effects it can produce, and prepares visual planning plus image-generation behavior automatically.
 
 ## What Problem It Solves
 

@@ -41,6 +41,31 @@
 
 如果 `assets/references/characters/` 里存在与当前用户上传图不同的旧图、示例图或私有项目图，默认忽略。不要根据文件名、修改时间或图片存在性自动选择目录里的角色；无法确认当前角色和目录参考图是否一致时，先使用当前上传图，或向用户确认。
 
+## 固定 IP 参考图执行规则
+
+固定 IP 成稿不能只靠文字 prompt。只要使用当前对话上传图、本机私有默认角色绑定、用户指定路径或 `ip-subject.md` 绑定的角色，最终成稿应把对应参考图作为实际图像参考输入或图像编辑输入。但在本机快速测试、自我介绍展示或方向预览中，如果当前生图工具只能文本生图，可以先生成“镇小宁方向预览图”，前提是必须明确它不是最终 IP 一致性成稿，并进行角色漂移 QA。
+
+- 生成前先确认参考图来源：当前上传图 / `ip-subject.local.md` 路径 / 用户指定路径 / `ip-subject.md` 路径。
+- 生成前确认参考图文件存在；如果路径不存在，先提示缺失，不要凭文字描述补画。
+- 如果当前生图工具支持参考图输入或图像编辑，必须使用参考图作为 identity source，再把动作、道具、布局和白底彩铅草稿风作为变换要求。
+- 如果当前生图工具只支持文本到图像，不能传入参考图，但任务是本机快速测试、自我介绍展示或方向预览，可以主动生成“镇小宁方向预览图”；生成前写明这是方向预览，不是最终固定 IP 成稿。
+- 如果用户明确要求“最终成稿 / 严格一致 / 官方发布 / 固定 IP 不能跑偏”，且当前生图工具不能传入参考图，先说明：`当前生图工具不能接入角色参考图，只靠文字会画成相似角色，不能保证是你的固定 IP。请在当前对话上传角色图，或换用支持参考图/图像编辑的生图工具。`
+- 方向预览图也必须以镇小宁为主角，不得画真人肖像、普通人物照片、抽象人像、无角色图、线团人、空心方盒或普通蓝色吉祥物。
+- prompt 里可以写识别点，但识别点只是辅助，不替代参考图输入。
+
+固定 IP 合格标准：第一眼能对应参考图的物种、轮廓、五官比例、颜色分布和标志部件；不是“蓝色、红鼻子、黄耳朵所以差不多”。方向预览图低于这个标准时，不要交付为成稿，只能重试或提示需要参考图输入。
+
+## 镇小宁方向预览硬约束
+
+当本机私有默认角色绑定生效，但当前生图工具不能接入本地参考图时，可以为本机快速测试、自我介绍展示或方向预览主动生成图片。此时必须同时满足：
+
+- 交付说明写明：`方向预览，非最终 IP 一致性成稿`；不得把方向预览称为正式 IP 成稿、官方图或严格一致版本。
+- prompt 必须声明：使用镇小宁作为主视觉主体；蓝色圆润小兽、白色肚皮、红色圆鼻子、两只大白眼和黑色瞳孔、黄色眉毛、头顶两根黄色长耳/触角、两侧尖耳和蓬松侧边轮廓、短胖圆润四肢。
+- prompt 必须声明：不画真人肖像，不画拟真人头像，不画普通人物照片，不画抽象人像，不画无角色图，不画线团人，不画空心方盒，不画普通蓝色角色，不画通用蓝色吉祥物。
+- “更像你自己”只指表达风格、结构节奏、判断方式和视觉偏好更像用户；不得解释成画用户真人、自拍、半身像、职业照或拟真人角色。
+- 默认画风读取本机 `references/style-reference.local.md`：白底彩铅草稿风、彩铅颗粒、松弛铅笔线、明显留白、短中文手写批注；不要退回商业矢量、低幼贴纸、3D 渲染或光滑 mascot 海报。
+- 生成后做角色漂移 QA：如果成图变成人像、无角色图、线团人、空心方盒、普通蓝色角色或其他主体，先重试并强化识别点；重试后仍失败，则要求用户上传镇小宁参考图或换支持参考图/图像编辑的生图工具。
+
 ## 点名角色但缺少参考图
 
 用户说“镇小宁形象”“镇小宁 IP”“我的 IP 形象”“用这个角色”“用某某角色”时，视为已经点名具体角色。此时：
@@ -51,6 +76,7 @@
 - 如果存在 `references/ip-subject.local.md`，且它明确绑定了被点名角色并允许本机默认使用，优先使用该私有绑定，不要再要求上传。
 - 如果没有当前上传图、本机私有绑定、固定参考图路径或 `ip-subject.md` 绑定，先输出一句明确限制：`当前没有可用的 <角色名> 参考图，不能用默认主体代替。请上传角色图或指定参考图路径；在此之前我只能先做文案、布局规划和不含具体角色的 prompt。`
 - 如果用户只是说“镇小宁风格实验室”这个 Skill 名，没有说“镇小宁形象 / IP / 角色”，公开通用环境里不要误判为要求使用镇小宁角色；但在创作者本人本机环境里，如果 `ip-subject.local.md` 明确写了“无其他角色时默认使用镇小宁”，则可以按该文件执行。
+- 如果本机私有绑定生效但当前生图工具不能把绑定路径里的参考图作为图像输入：快速测试和自我介绍展示可以主动生成“镇小宁方向预览图”；最终成稿必须要求用户把参考图上传到当前对话，或换用支持参考图/图像编辑的生图工具。
 
 ## 角色参考图落位
 
@@ -65,7 +91,7 @@
 
 ## 画面密度档位
 
-默认自动选择密度，不让用户先选菜单。不确定时优先轻配图；如果内容既适合正文配图又适合深度拆解，可以给“轻配图 / 中密度解释图 / 高密度工作台”三种方案供用户取舍。
+默认自动选择密度，不让用户先选菜单。不确定时优先轻配图；如果内容既适合正文配图又适合深度拆解，可以给“轻配图 / 中密度解释图 / 高密度工作台”三种方案供用户取舍。图中文字也默认由 Agent 从内容里提取短词，不要求用户提供白名单。
 
 | 档位 | 适用场景 | 核心意思 | 中文标注 | 信息承载物 | 箭头/连线 | 留白 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -94,7 +120,7 @@
 - 如果用户明确要“留白多一点”，主体群缩到画布宽度 25%-38%、高度 20%-32%，四周安全边至少 35%，中文批注 1-3 个。
 - 如果用户明确要“内容更丰富”，可以升到中密度或高密度，但必须先安排分区和阅读路径，不能只是放大主体、增加纸片或堆更多批注。
 - 批注是小手写注，不是标题。不要让红字、箭头或标签成为画面里最大的视觉元素。
-- 图片中文字必须来自 prompt 里的短词白名单，不自动新增解释句、标题或检查清单。
+- 图片中文字必须来自 prompt 里的短词白名单，不自动新增解释句、标题或检查清单。短词白名单由 Agent 从目标文案、核心观点和平台语境里自动提取，除非用户主动指定文字。默认要把白名单里的短词直接画进图里，像手写批注、云朵短词、小标签或纸角字迹；不要把气泡、标签、卡片或纸条全部留空。只有用户明确要求“最终排版”“本地字体”“无字底图”，或当前模型连续写坏中文时，才改成无字底图加后期排字。
 - 新颖载体也要能动作化：收音调频可以画手指把噪声旋钮拧到清晰刻度，裁缝试衣可以画一块布样被粗线缝回边角，暗房显影可以画照片从水里露出一点轮廓，小店货架可以画价签被掀开露出真实卖点。
 - 只有用户明确要“完整场景”“一张图讲清楚”“无限画布”“PPT 工作台”时，才扩展成完整空间或多区块工作台。
 - 低密度必须先选日常动作隐喻，例如掀开、摸索、拖出来、按住、贴胶带、晾干、揉纸、夹住、蹲下找、抖落、捞出、撕开、拼回去。
@@ -349,6 +375,8 @@ Use a clean white canvas, loose black sketch lines, quiet spacing, and a few sho
 Original recurring subject:
 {主体名字}: {外形}. Temperament: {性格}. The subject must be responsible for the main action that explains the idea.
 
+If local private default subject binding is active, use Zhenxiaoning as the main visual subject. Do not draw a human portrait, realistic avatar, abstract person, empty scene, thread person, hollow box, generic blue mascot, ordinary blue character, or any other replacement subject. If this is only a direction preview because the generator cannot receive the reference image, label it as "方向预览，非最终 IP 一致性成稿" and do not present it as a final IP-consistent artwork.
+
 Topic:
 {主题}
 
@@ -389,13 +417,13 @@ Series variety:
 If this is part of a series, state which composition mode is used and how it differs from the previous images. Avoid repeating left-input / center-character / right-output cards unless this is the first image or there is a strong reason.
 
 Short Chinese notes:
-{按密度档位填写：轻配图 2-4 个；中密度解释图 4-6 个；高密度工作台 8-12 个}
+{Agent 从本图目标文案自动提取，按密度档位填写：轻配图 0-2 个；中密度解释图 3-6 个；高密度工作台 8-12 个。不要要求用户手动列词。}
 
 Exact Chinese text allowed:
-{列出允许出现在图里的所有中文短词。生成图不得新增解释句、标题、段落、检查清单或未列出的中文。}
+{Agent 从目标文案自动列出允许出现在图里的所有中文短词。默认直接把这些短词画进图里，作为小手写批注、云朵短词、小标签或纸角字迹；生成图不得新增解释句、标题、段落、检查清单或未列出的中文；不得把所有文字容器留空。}
 
 Hard limits:
-Follow the selected density tier. 轻配图 must stay sparse and leave at least 45%-55% white space; show one everyday action relationship with 2-4 objects, not an overview and not a static prop arrangement. For 轻配图, keep the subject/object cluster visibly smaller than the canvas, avoid edge-to-edge composition, and make handwritten notes small annotations rather than titles. All visible Chinese text must be short and must come only from the exact allowed text list; do not invent headlines, explanatory sentences, paragraph text, checklist items, or extra labels. 中密度解释图 must have two clear information zones at most and leave at least 35% white space; it may use a rough small scene, but the scene must be driven by the action, not by card stacking, and must not be a polished full room, full shop, full station, full restaurant, or full workbench. 高密度工作台 may contain more material, but must have three clear sections, a main reading path, and at least 15% white space; keep the scene rough and hand-drawn, not commercial or glossy. Do not draw every diagnostic point unless the selected tier is 高密度工作台 and the user asked for a workbench, canvas, review, lesson, PPT, or one-image overview. Do not make density differ only by adding paper cards or handwritten labels. The presentation carrier must be visible through props, action, occlusion, revealed clues, and spacing, not through explanatory text. If the framing scale is 局部轻描, use a daily action such as lifting a blanket corner, pulling a note from under cardboard, taping down a noisy red dot, shaking an old tablecloth, wrinkling a too-smooth draft, fitting a picture into mismatched frames, or fishing a clue from a cup bottom. Avoid polished interiors, polished restaurants, clean UI mockups, commercial posters, glossy 3D rendering, top-left category titles, structure labels, chaotic dense arrows, repeated left-to-right pipeline layouts, repeated paper/card/folder/timeline carrier families across adjacent series images, copied examples, public-case metaphor templates, third-party IP, recognizable living-artist styles, and any mascot-like copy of another character.
+Follow the selected density tier. 轻配图 must stay sparse and leave at least 45%-55% white space; show one everyday action relationship with 2-4 objects, not an overview and not a static prop arrangement. For 轻配图, keep the subject/object cluster visibly smaller than the canvas, avoid edge-to-edge composition, and make handwritten notes small annotations rather than titles. All visible Chinese text must be short and must come only from the exact allowed text list; directly render the allowed short words in the image as rough handwritten annotations, cloud notes, tiny labels, or exposed note corners. Do not invent headlines, explanatory sentences, paragraph text, checklist items, or extra labels. Do not leave all speech bubbles, labels, cards, note papers, or UI-like text areas blank when allowed short words are provided. 中密度解释图 must have two clear information zones at most and leave at least 35% white space; it may use a rough small scene, but the scene must be driven by the action, not by card stacking, and must not be a polished full room, full shop, full station, full restaurant, or full workbench. 高密度工作台 may contain more material, but must have three clear sections, a main reading path, and at least 15% white space; keep the scene rough and hand-drawn, not commercial or glossy. Do not draw every diagnostic point unless the selected tier is 高密度工作台 and the user asked for a workbench, canvas, review, lesson, PPT, or one-image overview. Do not make density differ only by adding paper cards or handwritten labels. The presentation carrier must be visible through props, action, occlusion, revealed clues, and spacing, not through explanatory text. If the framing scale is 局部轻描, use a daily action such as lifting a blanket corner, pulling a note from under cardboard, taping down a noisy red dot, shaking an old tablecloth, wrinkling a too-smooth draft, fitting a picture into mismatched frames, or fishing a clue from a cup bottom. Avoid polished interiors, polished restaurants, clean UI mockups, commercial posters, glossy 3D rendering, top-left category titles, structure labels, chaotic dense arrows, repeated left-to-right pipeline layouts, repeated paper/card/folder/timeline carrier families across adjacent series images, copied examples, public-case metaphor templates, third-party IP, recognizable living-artist styles, and any mascot-like copy of another character.
 ```
 
 ## QA 判断
@@ -409,6 +437,8 @@ Follow the selected density tier. 轻配图 must stay sparse and leave at least 
 如果选择的是轻配图，但主体群铺得太大、贴近画面边缘、四周没有明显白边，或红字批注像标题一样抢眼，判定为尺度失败，需要缩小主体群并改成局部轻描。
 
 如果生成图出现 prompt 未列出的中文、长句、标题化红字、段落或检查清单，判定为文字漂移，需要重写 prompt 并使用 `Exact Chinese text allowed` 白名单。
+
+如果 prompt 已列出 `Exact Chinese text allowed`，但成图里的气泡、标签、卡片或纸条全部空白，判定为文字漏画；先重生成并明确要求“直接画入这些短中文手写批注”，不要直接进入本地字体排版，除非用户要最终海报精修或模型连续失败。
 
 如果轻配图和高密度工作台缩略图看起来差不多，只是后者多了几张纸或多几个标签，判定为密度失败，需要把轻配图改成单动作特写，或把高密度改成有分区的工作台。
 
