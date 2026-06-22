@@ -12,6 +12,14 @@ It is not a generic Skill Creator. It focuses on one concrete problem:
 
 ## Latest Updates
 
+- **2026-06-22**: Clarified that Zhenxiaoning is the author's own IP example for demonstrating fixed-character binding. The public repository does not grant reuse rights for the character; users should bind their own original or authorized character.
+- **2026-06-22**: Added three-style routing: white colored-pencil explains ideas and mechanisms, abstract Zhenxiaoning handles state / emotion / transition images, and photo-object collage handles evidence and work scenes.
+- **2026-06-22**: Tightened abstract Zhenxiaoning rules: use one unique master reference instead of a random reference set; generate 3-5 body-system deformation candidates before choosing the one that best matches the topic.
+- **2026-06-22**: Banned local text compositing. Image text should be generated naturally as short handwritten notes; if text fails, reduce the words or move exact copy outside the image instead of using Pillow, ImageMagick, or screenshot overlays.
+- **2026-06-15**: Added an optional abstract Zhenxiaoning doodle style: a looser colored-pencil scribble variant with stronger human emotion and artistic texture. "Human-like" means expression and posture, not a realistic human portrait.
+- **2026-06-15**: Added unique-master support for abstract Zhenxiaoning variants. When a local or user-provided abstract master exists, future generations must extend from that master instead of reinventing the abstract look from text each time.
+- **2026-06-15**: Added an optional photo-object sketch collage style: a few real objects form a small work scene while the hand-drawn subject pulls, labels, pins, repairs, or connects the idea.
+- **2026-06-15**: Adjusted the default scale of fixed characters. A locked subject now acts as a readable medium-small operator in normal article images, general showcases, and direction previews instead of taking over the composition as a large mascot.
 - **2026-06-15**: Strengthened the one-sentence entry experience. A short natural-language request now defaults to a general showcase and automatically prepares copy, title structure, visual planning, density/layout choices, short Chinese annotations, and image generation when available.
 - **2026-06-15**: Clarified the boundary between final fixed-IP artwork and direction previews. Final IP-consistent artwork requires reference-image input; text-only generation may produce a clearly labeled non-final direction preview with QA checks against subject drift.
 - **2026-06-14**: Added five practical workflows so users can test the Skill before building a full style asset pack:
@@ -25,6 +33,12 @@ It is not a generic Skill Creator. It focuses on one concrete problem:
 - **2026-06-14**: Added bilingual README entry points for Chinese and English users.
 
 See [`CHANGELOG.md`](CHANGELOG.md) for the full changelog.
+
+## About The Zhenxiaoning Character
+
+Zhenxiaoning is the author's own IP example, used to show how a fixed character, content copy, and style rules can become a stable illustration system.
+
+The public repository does not include or grant default reuse rights for the Zhenxiaoning character. Use your own original or authorized character, or bind a private local character through `references/ip-subject.local.md` without committing that file. Contact the author first if you want to use the Zhenxiaoning character.
 
 ## Shortest Usage
 

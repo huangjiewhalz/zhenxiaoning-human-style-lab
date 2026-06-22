@@ -1,7 +1,19 @@
 # Changelog
 
+## 2026-06-22
+
+- Clarified the public IP boundary: Zhenxiaoning is shown as the author's own example character, but the repository does not grant default reuse rights for that character.
+- Added three-style routing: white colored-pencil for explanation, abstract Zhenxiaoning for state/emotion/transition images, and photo-object sketch collage for evidence/work scenes.
+- Replaced abstract fixed-reference-set wording with a unique-master rule for abstract Zhenxiaoning variants.
+- Added abstract deformation candidate-pool rules: generate 3-5 body-system candidates before choosing one, avoid repeated belly deformation, avoid wire-repair metaphors for "recovery", and keep the deformation on the character itself.
+- Added unified white-paper background rules and banned local text compositing with Pillow, ImageMagick, local fonts, or screenshot overlays.
+
 ## 2026-06-15
 
+- Added an optional abstract Zhenxiaoning doodle style for looser colored-pencil variants that feel more hand-drawn, emotional, and artistic without turning the character into a realistic human portrait.
+- Added unique-master handling for abstract Zhenxiaoning variants so future generations extend from one selected master reference instead of reinventing the abstract look from text each time.
+- Added an optional photo-object sketch collage style for showcase, workflow recap, AI experiment logs, and product explanation scenes.
+- Adjusted the default scale of fixed characters: locked subjects should act as readable medium-small operators in normal explanatory images, not dominate the composition as large mascots.
 - Tightened the one-sentence self-showcase workflow: short prompts asking the Skill to explain itself now default to a general showcase with copy, structure, image planning, density/layout choices, short Chinese annotations, and image generation when available.
 - Added stronger runtime rules so available image-generation tools must be invoked instead of stopping at prompts or plans.
 - Clarified local private subject and style binding behavior: when configured, self-showcase images use the local default subject as the main visual actor and the local hand-drawn style by default.

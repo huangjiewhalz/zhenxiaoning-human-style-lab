@@ -4,6 +4,8 @@ Zhenxiaoning Human Style Lab is an open source Codex Skill project for personal 
 
 ## Character Assets
 
+Zhenxiaoning is the author's own character IP and appears in this project as a demonstration example for fixed-character binding. The open source license for this repository does not grant default reuse rights for the Zhenxiaoning character design, demo images, private master references, or local binding files. If you want to use the Zhenxiaoning character, contact the author for permission first.
+
 If you fork this project to build your own personal style Skill, use your own original or authorized IP asset for any fixed visual subject:
 
 ```text
